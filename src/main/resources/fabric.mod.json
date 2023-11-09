@@ -1,10 +1,9 @@
 {
   "schemaVersion": 1,
-  "id": "examplemod",
+	"id": "better_with_aquatic",
   "version": "${version}",
-
-  "name": "Example Mod",
-  "description": "This mod aims to help new BTA modders.",
+	"name": "Better With Aquatic",
+	"description": "This mod add Aquatic feature such as modern!.",
   "authors": [
     "Turnip Labs"
   ],
@@ -18,15 +17,18 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-        "turniplabs.examplemod.ExampleMod"
+			"baguchan.better_with_aquatic.BetterWithAquatic"
     ]
   },
   "mixins": [
-      "examplemod.mixins.json"
+		"better_with_aquatic.mixins.json"
   ],
 
   "depends": {
-    "fabricloader": ">=0.13.3"
+		"fabricloader": ">=0.13.3",
+		"halplibe": ">=2.6.0",
+		"prismaticlibe": ">=1.1.0",
+		"better_ai": ">=1.2.0"
   },
   "suggests": {
   }
