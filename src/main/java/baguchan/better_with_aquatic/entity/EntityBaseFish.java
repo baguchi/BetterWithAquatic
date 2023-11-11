@@ -154,7 +154,7 @@ public class EntityBaseFish extends EntityWaterAnimal implements IPathGetter {
 
 
 				double d3 = Math.sqrt(x1 * x1 + y1 * y1 + z1 * z1);
-				this.yd = MathHelper.clamp(y1 / d3, -0.5F, 0.5F) * this.moveSpeed;
+				this.yd += MathHelper.clamp(y1 / d3, -0.5F, 0.5F) * 0.25F * this.moveSpeed;
 			}
 			if (this.entityToAttack != null) {
 				this.faceEntity(this.entityToAttack, 30.0f, 30.0f);

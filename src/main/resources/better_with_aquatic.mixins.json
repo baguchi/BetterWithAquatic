@@ -4,7 +4,8 @@
   "package": "baguchan.better_with_aquatic.mixin",
     "compatibilityLevel": "JAVA_8",
     "mixins": [
-      "BiomeMixin"
+      "BiomeMixin",
+      "EntityMixin"
     ],
     "client": [
     ],
