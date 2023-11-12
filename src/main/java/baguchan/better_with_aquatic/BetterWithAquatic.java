@@ -1,5 +1,6 @@
 package baguchan.better_with_aquatic;
 
+import baguchan.better_with_aquatic.block.ModBlocks;
 import baguchan.better_with_aquatic.entity.EntityBaseFish;
 import baguchan.better_with_aquatic.entity.render.FishModel;
 import baguchan.better_with_aquatic.entity.render.RenderFish;
@@ -19,7 +20,7 @@ public class BetterWithAquatic implements ModInitializer {
 	public void onInitialize() {
 		Block.lightOpacity[Block.fluidWaterFlowing.id] = 1;
 		Block.lightOpacity[Block.fluidWaterStill.id] = 1;
+		ModBlocks.createBlocks();
 		EntityHelper.createEntity(EntityBaseFish.class, new RenderFish(new FishModel(), 0.3F), 600, "Fish");
 	}
-
 }

@@ -5,9 +5,11 @@
     "compatibilityLevel": "JAVA_8",
     "mixins": [
       "BiomeMixin",
+      "ChunkDecoratorOverworldMixin",
       "EntityMixin"
     ],
     "client": [
+      "client.ChunkRendererMixin"
     ],
     "injectors": {
         "defaultRequire": 1

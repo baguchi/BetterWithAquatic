@@ -18,7 +18,10 @@
   "entrypoints": {
     "main": [
 			"baguchan.better_with_aquatic.BetterWithAquatic"
-    ]
+		],
+		"client": [
+			"baguchan.better_with_aquatic.BetterWithAquaticClient"
+		]
   },
   "mixins": [
 		"better_with_aquatic.mixins.json"

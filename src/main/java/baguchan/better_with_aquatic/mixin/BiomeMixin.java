@@ -3,6 +3,7 @@ package baguchan.better_with_aquatic.mixin;
 import baguchan.better_with_aquatic.entity.EntityBaseFish;
 import net.minecraft.core.entity.SpawnListEntry;
 import net.minecraft.core.world.biome.Biome;
+import net.minecraft.core.world.biome.Biomes;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -19,6 +20,9 @@ public class BiomeMixin {
 
 	@Inject(method = "<init>", remap = false, at = @At("TAIL"))
 	private void addMobs(CallbackInfo ci) {
-		spawnableWaterCreatureList.add(new SpawnListEntry(EntityBaseFish.class, 15));
+		Biome biome = (Biome) (Object) this;
+		if (biome != Biomes.NETHER_NETHER) {
+			spawnableWaterCreatureList.add(new SpawnListEntry(EntityBaseFish.class, 15));
+		}
 	}
 }
