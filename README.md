@@ -7,3 +7,4 @@
 - Halplibe https://github.com/Turnip-Labs/bta-halplibe
 - prismatic https://github.com/UselessBullets/BTA_Babric_PrismaticLibe
 - Better AI BTA
+- Terrain API https://bta-modding.nouma-vallee.fr/Useless/terrainapi/
