@@ -16,7 +16,6 @@ public class CoralBlock extends Block {
 	public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
 		switch (dropCause) {
 			case PICK_BLOCK:
-			case PROPER_TOOL:
 			case SILK_TOUCH: {
 				return new ItemStack[]{new ItemStack(this)};
 			}

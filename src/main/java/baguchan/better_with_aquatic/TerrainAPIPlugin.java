@@ -18,7 +18,7 @@ public class TerrainAPIPlugin implements TerrainAPI {
 	public void onInitialize() {
 		ChunkDecoratorOverworldAPI.randomFeatures.addFeature(new WorldFeatureSeaGrass(ModBlocks.sea_grass.id), 1, -1, 6,
 			new Biome[]{Biomes.OVERWORLD_SWAMPLAND, Biomes.OVERWORLD_SWAMPLAND_MUDDY, Biomes.OVERWORLD_BIRCH_FOREST, Biomes.OVERWORLD_RETRO, Biomes.OVERWORLD_MEADOW, Biomes.OVERWORLD_FOREST, Biomes.OVERWORLD_RAINFOREST, Biomes.OVERWORLD_BOREAL_FOREST, Biomes.OVERWORLD_SEASONAL_FOREST, Biomes.OVERWORLD_TAIGA, Biomes.OVERWORLD_SHRUBLAND});
-		ChunkDecoratorOverworldAPI.randomFeatures.addFeature(new WorldFeatureCoral(), 5, -1, 4,
+		ChunkDecoratorOverworldAPI.randomFeatures.addFeature(new WorldFeatureCoral(), 4, -1, 4,
 			new Biome[]{Biomes.OVERWORLD_BIRCH_FOREST, Biomes.OVERWORLD_RETRO, Biomes.OVERWORLD_MEADOW, Biomes.OVERWORLD_FOREST, Biomes.OVERWORLD_BOREAL_FOREST, Biomes.OVERWORLD_SEASONAL_FOREST, Biomes.OVERWORLD_SHRUBLAND, Biomes.OVERWORLD_RAINFOREST});
 	}
 }
