@@ -1,8 +1,23 @@
 tile.better_with_aquatic.sea_grass.name=Sea Grass
-tile.better_with_aquatic.coral_blue.name=Blue Coral
-tile.better_with_aquatic.coral_cyan.name=Cyan Coral
-tile.better_with_aquatic.coral_green.name=Green Coral
-tile.better_with_aquatic.coral_pink.name=Pink Coral
-tile.better_with_aquatic.coral_purple.name=Purple Coral
-tile.better_with_aquatic.coral_red.name=Red Coral
-tile.better_with_aquatic.coral_yellow.name=Yellow Coral
+tile.better_with_aquatic.sea_grass.desc=Flowing greenery found within the water.
+
+tile.better_with_aquatic.coral_red.name=Corallium Coral
+tile.better_with_aquatic.coral_red.desc=A red bioluminescent bone like block found in oceans.
+
+tile.better_with_aquatic.coral_yellow.name=Brain Coral
+tile.better_with_aquatic.coral_yellow.desc=A yellow bioluminescent bone like block found in oceans.
+
+tile.better_with_aquatic.coral_green.name=Green Star Coral
+tile.better_with_aquatic.coral_green.desc=A green bioluminescent bone like block found in oceans.
+
+tile.better_with_aquatic.coral_cyan.name=Colonial Coral
+tile.better_with_aquatic.coral_cyan.desc=A cyan bioluminescent bone like block found in oceans.
+
+tile.better_with_aquatic.coral_blue_name=Goniopora Coral
+tile.better_with_aquatic.coral_blue.desc=A blue bioluminescent bone like block found in oceans.
+
+tile.better_with_aquatic.coral_purple.name=Tube Coral
+tile.better_with_aquatic.coral_purple.desc=A purple bioluminescent bone like block found in oceans.
+
+tile.better_with_aquatic.coral_pink.name=Carnation Coral
+tile.better_with_aquatic.coral_pink.desc=A pink bioluminescent bone like block found in oceans.
