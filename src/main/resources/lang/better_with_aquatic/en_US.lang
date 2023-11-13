@@ -1,2 +1,8 @@
-tile.better_with_aquatic.sea_grass_flow.name=Sea Grass
 tile.better_with_aquatic.sea_grass.name=Sea Grass
+tile.better_with_aquatic.coral_blue.name=Blue Coral
+tile.better_with_aquatic.coral_cyan.name=Cyan Coral
+tile.better_with_aquatic.coral_green.name=Green Coral
+tile.better_with_aquatic.coral_pink.name=Pink Coral
+tile.better_with_aquatic.coral_purple.name=Purple Coral
+tile.better_with_aquatic.coral_red.name=Red Coral
+tile.better_with_aquatic.coral_yellow.name=Yellow Coral
