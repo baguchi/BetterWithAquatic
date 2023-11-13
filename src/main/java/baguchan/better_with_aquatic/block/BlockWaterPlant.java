@@ -11,8 +11,8 @@ import net.minecraft.core.world.World;
 
 import java.util.Random;
 
-public class BlockFluidWithSeagrass extends BlockFluidStill {
-	public BlockFluidWithSeagrass(String name, int openIds, Material water) {
+public class BlockWaterPlant extends BlockFluidStill {
+	public BlockWaterPlant(String name, int openIds, Material water) {
 		super(name, openIds, water);
 		float f = 0.4f;
 		this.setBlockBounds(0.5f - f, 0.0f, 0.5f - f, 0.5f + f, 0.8f, 0.5f + f);
@@ -119,6 +119,13 @@ public class BlockFluidWithSeagrass extends BlockFluidStill {
 		if (!this.canBlockStay(world, i, j, k)) {
 			world.setBlockAndMetadataWithNotify(i, j, k, fluidWaterStill.id, world.getBlockMetadata(i, j, k));
 		}
+	}
+
+	@Override
+	public void onBlockRemoval(World world, int x, int y, int z) {
+		super.onBlockRemoval(world, x, y, z);
+		world.setBlockAndMetadataWithNotify(x, y, z, fluidWaterStill.id, world.getBlockMetadata(x, y, z));
+
 	}
 
 	public boolean canCollideCheck(int meta, boolean shouldCollideWithFluids) {
