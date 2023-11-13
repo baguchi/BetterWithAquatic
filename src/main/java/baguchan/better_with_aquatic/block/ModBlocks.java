@@ -13,39 +13,41 @@ import turniplabs.halplibe.helper.BlockBuilder;
 import static turniplabs.halplibe.helper.BlockHelper.findOpenIds;
 
 public class ModBlocks {
+
+
 	public static final Block sea_grass = new BlockBuilder(BetterWithAquatic.MOD_ID)
 		.setHardness(100.0f)
 		.setLightOpacity(1)
 		.setTextures("sea_grass.png")
-		.setTags(BlockTags.IS_WATER, BlockTags.PLACE_OVERWRITES)
+		.setTags(BlockTags.IS_WATER, BlockTags.PLACE_OVERWRITES, BlockTags.SHEARS_DO_SILK_TOUCH)
 		.setBlockSound(BlockSounds.GRASS)
 		.build(new BlockFluidWithSeagrass("sea_grass", findOpenIds(IDUtils.getCurrBlockId()), Material.water));
 	public static final Block coral_blue = new BlockBuilder(BetterWithAquatic.MOD_ID)
 		.setHardness(0.6f)
 		.setResistance(0.65F)
 		.setTextures("coral_blue.png")
-		.setTags(BlockTags.MINEABLE_BY_SHEARS)
+		.setTags(BlockTags.MINEABLE_BY_SHEARS, BlockTags.SHEARS_DO_SILK_TOUCH)
 		.setBlockSound(BlockSounds.GRASS)
 		.build(new CoralBlock("coral_blue", findOpenIds(IDUtils.getCurrBlockId()), Material.vegetable));
 	public static final Block coral_cyan = new BlockBuilder(BetterWithAquatic.MOD_ID)
 		.setHardness(0.6f)
 		.setResistance(0.65F)
 		.setTextures("coral_cyan.png")
-		.setTags(BlockTags.MINEABLE_BY_SHEARS)
+		.setTags(BlockTags.MINEABLE_BY_SHEARS, BlockTags.SHEARS_DO_SILK_TOUCH)
 		.setBlockSound(BlockSounds.GRASS)
 		.build(new CoralBlock("coral_cyan", findOpenIds(IDUtils.getCurrBlockId()), Material.vegetable));
 	public static final Block coral_green = new BlockBuilder(BetterWithAquatic.MOD_ID)
 		.setHardness(0.6f)
 		.setResistance(0.65F)
 		.setTextures("coral_green.png")
-		.setTags(BlockTags.MINEABLE_BY_SHEARS)
+		.setTags(BlockTags.MINEABLE_BY_SHEARS, BlockTags.SHEARS_DO_SILK_TOUCH)
 		.setBlockSound(BlockSounds.GRASS)
 		.build(new CoralBlock("coral_green", findOpenIds(IDUtils.getCurrBlockId()), Material.vegetable));
 	public static final Block coral_pink = new BlockBuilder(BetterWithAquatic.MOD_ID)
 		.setHardness(0.6f)
 		.setResistance(0.65F)
 		.setTextures("coral_pink.png")
-		.setTags(BlockTags.MINEABLE_BY_SHEARS)
+		.setTags(BlockTags.MINEABLE_BY_SHEARS, BlockTags.SHEARS_DO_SILK_TOUCH)
 		.setBlockSound(BlockSounds.GRASS)
 		.build(new CoralBlock("coral_pink", findOpenIds(IDUtils.getCurrBlockId()), Material.vegetable));
 
@@ -53,21 +55,21 @@ public class ModBlocks {
 		.setHardness(0.6f)
 		.setResistance(0.65F)
 		.setTextures("coral_purple.png")
-		.setTags(BlockTags.MINEABLE_BY_SHEARS)
+		.setTags(BlockTags.MINEABLE_BY_SHEARS, BlockTags.SHEARS_DO_SILK_TOUCH)
 		.setBlockSound(BlockSounds.GRASS)
 		.build(new CoralBlock("coral_purple", findOpenIds(IDUtils.getCurrBlockId()), Material.vegetable));
 	public static final Block coral_red = new BlockBuilder(BetterWithAquatic.MOD_ID)
 		.setHardness(0.6f)
 		.setResistance(0.65F)
 		.setTextures("coral_red.png")
-		.setTags(BlockTags.MINEABLE_BY_SHEARS)
+		.setTags(BlockTags.MINEABLE_BY_SHEARS, BlockTags.SHEARS_DO_SILK_TOUCH)
 		.setBlockSound(BlockSounds.GRASS)
 		.build(new CoralBlock("coral_red", findOpenIds(IDUtils.getCurrBlockId()), Material.vegetable));
 	public static final Block coral_yellow = new BlockBuilder(BetterWithAquatic.MOD_ID)
 		.setHardness(0.6f)
 		.setResistance(0.65F)
 		.setTextures("coral_yellow.png")
-		.setTags(BlockTags.MINEABLE_BY_SHEARS)
+		.setTags(BlockTags.MINEABLE_BY_SHEARS, BlockTags.SHEARS_DO_SILK_TOUCH)
 		.setBlockSound(BlockSounds.GRASS)
 		.build(new CoralBlock("coral_yellow", findOpenIds(IDUtils.getCurrBlockId()), Material.vegetable));
 
