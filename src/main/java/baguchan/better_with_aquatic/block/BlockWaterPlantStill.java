@@ -11,8 +11,8 @@ import net.minecraft.core.world.World;
 
 import java.util.Random;
 
-public class BlockWaterPlant extends BlockFluidStill {
-	public BlockWaterPlant(String name, int openIds, Material water) {
+public class BlockWaterPlantStill extends BlockFluidStill {
+	public BlockWaterPlantStill(String name, int openIds, Material water) {
 		super(name, openIds, water);
 		float f = 0.4f;
 		this.setBlockBounds(0.5f - f, 0.0f, 0.5f - f, 0.5f + f, 0.8f, 0.5f + f);
@@ -24,6 +24,7 @@ public class BlockWaterPlant extends BlockFluidStill {
 		if (blockId == Side.TOP.getId()) {
 			return;
 		}
+		int id = world.getBlockId(x, y, z);
 		if (world.getBlockId(x, y, z) == this.id) {
 			this.func_30004_j(world, x, y, z);
 		}
@@ -32,9 +33,9 @@ public class BlockWaterPlant extends BlockFluidStill {
 	private void func_30004_j(World world, int i, int j, int k) {
 		int l = world.getBlockMetadata(i, j, k);
 		world.editingBlocks = true;
-		world.setBlockAndMetadata(i, j, k, Block.fluidWaterFlowing.id, l);
+		world.setBlockAndMetadata(i, j, k, this.id + 1, l);
 		world.markBlocksDirty(i, j, k, i, j, k);
-		world.scheduleBlockUpdate(i, j, k, Block.fluidWaterFlowing.id, this.tickRate());
+		world.scheduleBlockUpdate(i, j, k, this.id + 1, this.tickRate());
 		world.editingBlocks = false;
 	}
 
@@ -106,7 +107,7 @@ public class BlockWaterPlant extends BlockFluidStill {
 
 	@Override
 	public boolean canPlaceBlockAt(World world, int x, int y, int z) {
-		return super.canPlaceBlockAt(world, x, y, z) && world.getBlockId(x, y, z) == Block.fluidWaterStill.id && this.canThisPlantGrowOnThisBlockID(world.getBlockId(x, y - 1, z));
+		return super.canPlaceBlockAt(world, x, y, z) && world.getBlockId(x, y, z) == Block.fluidWaterStill.id && world.getBlockMetadata(x, y, z) == 0 && this.canThisPlantGrowOnThisBlockID(world.getBlockId(x, y - 1, z));
 	}
 
 	@Override
@@ -124,8 +125,9 @@ public class BlockWaterPlant extends BlockFluidStill {
 	@Override
 	public void onBlockRemoval(World world, int x, int y, int z) {
 		super.onBlockRemoval(world, x, y, z);
-		world.setBlockAndMetadataWithNotify(x, y, z, fluidWaterStill.id, world.getBlockMetadata(x, y, z));
-
+		if (world.getBlockId(x, y, z) == 0) {
+			world.setBlockAndMetadataWithNotify(x, y, z, fluidWaterStill.id, world.getBlockMetadata(x, y, z));
+		}
 	}
 
 	public boolean canCollideCheck(int meta, boolean shouldCollideWithFluids) {

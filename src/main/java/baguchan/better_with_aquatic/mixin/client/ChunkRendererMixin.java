@@ -26,5 +26,13 @@ public class ChunkRendererMixin {
 				model.render(Block.fluidWaterStill, x, y, z);
 			}
 		}
+
+		if (block.id == ModBlocks.sea_grass_flow.id) {
+			if (renderPass == 1) {
+				BlockModel model = (BlockModel) BlockModelDispatcher.getInstance().getDispatch(Block.fluidWaterStill);
+
+				model.render(Block.fluidWaterFlowing, x, y, z);
+			}
+		}
 	}
 }

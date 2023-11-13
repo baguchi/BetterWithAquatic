@@ -12,6 +12,7 @@ public class BetterWithAquaticClient implements ClientModInitializer {
 	public void onInitializeClient() {
 		BlockModelDispatcher dispatcher = BlockModelDispatcher.getInstance();
 		dispatcher.addDispatch(ModBlocks.sea_grass, new BlockModelRenderBlocks(6));
+		dispatcher.addDispatch(ModBlocks.sea_grass_flow, new BlockModelRenderBlocks(6));
 
 	}
 }
