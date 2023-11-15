@@ -1,6 +1,7 @@
 package baguchan.better_with_aquatic.mixin;
 
-import baguchan.better_with_aquatic.entity.EntityBaseFish;
+import baguchan.better_with_aquatic.entity.EntityAnglerFish;
+import baguchan.better_with_aquatic.entity.EntityFish;
 import net.minecraft.core.entity.SpawnListEntry;
 import net.minecraft.core.world.biome.Biome;
 import net.minecraft.core.world.biome.Biomes;
@@ -22,7 +23,8 @@ public class BiomeMixin {
 	private void addMobs(CallbackInfo ci) {
 		Biome biome = (Biome) (Object) this;
 		if (biome != Biomes.NETHER_NETHER) {
-			spawnableWaterCreatureList.add(new SpawnListEntry(EntityBaseFish.class, 15));
+			spawnableWaterCreatureList.add(new SpawnListEntry(EntityFish.class, 15));
+			spawnableWaterCreatureList.add(new SpawnListEntry(EntityAnglerFish.class, 10));
 		}
 	}
 }
