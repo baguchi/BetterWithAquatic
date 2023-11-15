@@ -7,7 +7,6 @@ import net.minecraft.client.render.block.model.BlockModelRenderBlocks;
 
 
 public class BetterWithAquaticClient implements ClientModInitializer {
-
 	@Override
 	public void onInitializeClient() {
 		BlockModelDispatcher dispatcher = BlockModelDispatcher.getInstance();

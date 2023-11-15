@@ -13,7 +13,7 @@ tile.better_with_aquatic.coral_green.desc=A green bioluminescent bone like block
 tile.better_with_aquatic.coral_cyan.name=Colonial Coral
 tile.better_with_aquatic.coral_cyan.desc=A cyan bioluminescent bone like block found in oceans.
 
-tile.better_with_aquatic.coral_blue_name=Goniopora Coral
+tile.better_with_aquatic.coral_blue.name=Goniopora Coral
 tile.better_with_aquatic.coral_blue.desc=A blue bioluminescent bone like block found in oceans.
 
 tile.better_with_aquatic.coral_purple.name=Tube Coral

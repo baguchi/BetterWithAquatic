@@ -21,7 +21,7 @@ public class EntityBaseFish extends EntityWaterAnimal implements IPathGetter {
 		super(world);
 		this.scoreValue = 20;
 		this.health = 3;
-		this.heightOffset = 0.0F;
+		this.heightOffset = 0.2F;
 		this.footSize = 0.5F;
 		this.moveSpeed = 0.1F;
 		this.highestSkinVariant = -1;

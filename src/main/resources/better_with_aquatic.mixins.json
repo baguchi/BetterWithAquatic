@@ -1,16 +1,23 @@
 {
-    "required": true,
-    "minVersion": "0.8",
+  "required": true,
+  "minVersion": "0.8",
   "package": "baguchan.better_with_aquatic.mixin",
-    "compatibilityLevel": "JAVA_8",
-    "mixins": [
-      "BiomeMixin",
-      "EntityMixin"
-    ],
-    "client": [
-      "client.ChunkRendererMixin"
-    ],
-    "injectors": {
-        "defaultRequire": 1
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "BiomeMixin",
+    "EntityMixin",
+    "EntityPlayerMixin",
+    "NetHandlerMixin",
+    "NetServerHandlerMixin"
+  ],
+  "client": [
+    "client.ChunkRendererMixin",
+    "client.EntityPlayerSPMixin",
+    "client.KeyboardInputMixin",
+    "client.ModelPlayerMixin",
+    "client.PlayerRendererMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
   }
 }
