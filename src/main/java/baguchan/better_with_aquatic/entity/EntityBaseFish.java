@@ -7,13 +7,11 @@ import net.minecraft.core.block.material.Material;
 import net.minecraft.core.entity.Entity;
 import net.minecraft.core.entity.animal.EntityWaterAnimal;
 import net.minecraft.core.entity.player.EntityPlayer;
-import net.minecraft.core.item.Item;
-import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.util.helper.MathHelper;
 import net.minecraft.core.util.phys.Vec3d;
 import net.minecraft.core.world.World;
 
-public class EntityBaseFish extends EntityWaterAnimal implements IPathGetter {
+public abstract class EntityBaseFish extends EntityWaterAnimal implements IPathGetter {
 	public BetterSwimPathFinder betterSwimPathFinder;
 	private Entity currentTarget;
 
@@ -24,25 +22,12 @@ public class EntityBaseFish extends EntityWaterAnimal implements IPathGetter {
 		this.heightOffset = 0.2F;
 		this.footSize = 0.5F;
 		this.moveSpeed = 0.1F;
-		this.highestSkinVariant = -1;
-		this.setSize(0.45F, 0.45F);
-		this.setPos(this.x, this.y, this.z);
-		this.skinName = "fish";
 		this.betterSwimPathFinder = new BetterSwimPathFinder(world);
 		this.setPathFinder(this, this.betterSwimPathFinder);
 		this.setPathfindingMalus(this, BlockPath.WATER, 0.0F);
 		this.setPathfindingMalus(this, BlockPath.OPEN, -1.0F);
 	}
 
-	@Override
-	public String getEntityTexture() {
-		return "/assets/better_with_aquatic/entity/fish.png";
-	}
-
-	@Override
-	public String getDefaultEntityTexture() {
-		return "/assets/better_with_aquatic/entity/fish.png";
-	}
 
 	@Override
 	protected String getLivingSound() {
@@ -236,11 +221,6 @@ public class EntityBaseFish extends EntityWaterAnimal implements IPathGetter {
 		} else {
 			super.moveEntityWithHeading(moveStrafing, moveForward);
 		}
-	}
-
-	@Override
-	protected void dropFewItems() {
-		this.spawnAtLocation(new ItemStack(Item.foodFishRaw, 1, 0), 0.0f);
 	}
 
 	@Override
