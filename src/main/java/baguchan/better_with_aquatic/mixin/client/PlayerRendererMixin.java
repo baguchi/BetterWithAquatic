@@ -33,10 +33,11 @@ public abstract class PlayerRendererMixin extends LivingRenderer<EntityPlayer> {
 			if (swimAmount > 0.0F) {
 				float f3 = entity.isInWater() ? -90.0F - entity.xRot : -90.0F;
 				float f5 = MathUtil.lerp(swimAmount, 0.0F, f3);
-				GL11.glRotatef(f5, 1F, 0, 0);
 				if (((ISwiming) entity).isSwimming() && entity.isInWater()) {
-					GL11.glTranslatef(0.0F, -1.0F, 0.3F);
+					GL11.glRotatef(f5, 1F, 0, 0);
 				}
+				GL11.glTranslatef(0.0F, -1.0F, 0.3F);
+
 			}
 		}
 	}

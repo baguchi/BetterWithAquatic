@@ -3,9 +3,12 @@ package baguchan.better_with_aquatic.mixin;
 import baguchan.better_with_aquatic.api.ISwiming;
 import baguchan.better_with_aquatic.util.MathUtil;
 import com.mojang.nbt.CompoundTag;
+import net.minecraft.core.block.Block;
+import net.minecraft.core.block.BlockFluid;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.entity.EntityLiving;
 import net.minecraft.core.entity.player.EntityPlayer;
+import net.minecraft.core.util.helper.MathHelper;
 import net.minecraft.core.world.World;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -24,16 +27,23 @@ public abstract class EntityPlayerMixin extends EntityLiving implements ISwiming
 	}
 
 	public void setSwimming(boolean p_20274_) {
-		this.swimming = p_20274_;
-		if (p_20274_) {
+
+		if (p_20274_ && !this.swimming) {
 			this.heightOffset = 0.5f;
 			this.setSize(0.6F, 0.6F);
-		} else {
+			float center = this.bbWidth / 2.0f;
+			float heightOfMob = this.bbHeight;
+			this.bb.setBounds(x - (double) center, y - (double) this.heightOffset + (double) this.ySlideOffset, z - (double) center, x + (double) center, y - (double) this.heightOffset + (double) this.ySlideOffset + (double) heightOfMob, z + (double) center);
+
+		} else if (!p_20274_ && this.swimming) {
 			this.heightOffset = 1.62f;
 			this.ySlideOffset = 0.0f;
 			this.setSize(0.6F, 1.8F);
+			float center = this.bbWidth / 2.0f;
+			float heightOfMob = this.bbHeight;
+			this.bb.setBounds(x - (double) center, y, z - (double) center, x + (double) center, y + (double) heightOfMob, z + (double) center);
 		}
-
+		this.swimming = p_20274_;
 	}
 
 	public boolean isSwimming() {
@@ -57,10 +67,10 @@ public abstract class EntityPlayerMixin extends EntityLiving implements ISwiming
 	public void moveEntityWithHeading(float moveStrafing, float moveForward, CallbackInfo ci) {
 		if (this.isSwimming() && this.isInWater() && !this.isPassenger()) {
 			double d3 = this.getLookAngle().yCoord;
-			double d4 = d3 < -0.2 ? 0.04 : 0.08;
+			double d4 = d3 < -0.2 ? 0.04 : 0.1;
 			if (d3 <= 0.0
 				|| this.isJumping
-				|| this.world.getBlockMaterial((int) (this.x), (int) (this.y + 1.0 - 0.1), (int) (this.z)) == Material.water) {
+				|| this.world.getBlockMaterial(MathHelper.floor_double(this.x), MathHelper.floor_double(this.y + 1.0 - 0.5), MathHelper.floor_double(this.z)) == Material.water) {
 				this.yd += (d3 - yd) * d4;
 			}
 			this.xd += (this.getLookAngle().xCoord - xd) * 0.025F;
@@ -71,11 +81,13 @@ public abstract class EntityPlayerMixin extends EntityLiving implements ISwiming
 
 	@Inject(method = "onLivingUpdate", at = @At("HEAD"))
 	public void onLivingUpdate(CallbackInfo ci) {
-		if (!(this.world.getBlockId((int) (this.x), (int) this.y + 1, (int) (this.z)) != 0 && this.world.getBlockMaterial((int) (this.x), (int) this.y + 1, (int) (this.z)) != Material.water) && this.isVisuallyCrawling()) {
+		Block block = this.world.getBlock((int) this.x, MathHelper.floor_double(this.y + 1), (int) this.z);
+
+		if ((block instanceof BlockFluid || block == null) && this.isVisuallyCrawling()) {
 			this.setSwimming(false);
 		}
 
-		if (this.isSwimming() && this.isInWater() && this.moveForward == 0 && this.moveStrafing == 0) {
+		if ((block instanceof BlockFluid || block == null) && this.isSwimming() && this.isInWater() && this.moveForward == 0 && this.moveStrafing == 0) {
 			this.setSwimming(false);
 		}
 		this.updateSwimAmount();
