@@ -1,5 +1,6 @@
 package baguchan.better_with_aquatic.mixin.client;
 
+import baguchan.better_with_aquatic.BetterWithAquatic;
 import baguchan.better_with_aquatic.api.ISwiming;
 import net.minecraft.client.input.KeyboardInput;
 import net.minecraft.client.option.GameSettings;
@@ -29,7 +30,9 @@ public class KeyboardInputMixin {
 				if (keys[0]) {
 					this.sprintTime = 0;
 					if (this.sprintTime < 9) {
-						((ISwiming) entityplayer).setSwimming(true);
+						if (BetterWithAquatic.isEnableSwim()) {
+							((ISwiming) entityplayer).setSwimming(true);
+						}
 					}
 				} else {
 					if (this.sprintTime < 20) {

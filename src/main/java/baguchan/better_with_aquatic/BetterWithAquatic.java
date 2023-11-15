@@ -21,7 +21,7 @@ public class BetterWithAquatic implements ModInitializer {
 
 	public static final String MOD_ID = "better_with_aquatic";
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
-	private boolean enable_swim;
+	private static boolean enable_swim;
 
 	private void handleConfig() {
 		Properties prop = new Properties();
@@ -32,7 +32,7 @@ public class BetterWithAquatic implements ModInitializer {
 		IDUtils.initIds(
 			config.getInt("starting_block_id"),
 			config.getInt("starting_item_id"));
-		this.enable_swim = config.getBoolean("enable_swim");
+		enable_swim = config.getBoolean("enable_swim");
 		config.updateConfig();
 	}
 
@@ -46,7 +46,7 @@ public class BetterWithAquatic implements ModInitializer {
 		NetworkHelper.register(SwimPacket.class, true, false);
 	}
 
-	public boolean isEnableSwim() {
+	public static boolean isEnableSwim() {
 		return enable_swim;
 	}
 }
