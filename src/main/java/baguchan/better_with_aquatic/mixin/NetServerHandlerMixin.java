@@ -14,7 +14,7 @@ public class NetServerHandlerMixin implements ISwimPacket {
 	private EntityPlayerMP playerEntity;
 
 	@Override
-	public void handleMobEnchant(SwimPacket packet) {
+	public void handleSwim(SwimPacket packet) {
 		if (playerEntity instanceof ISwiming) {
 			((ISwiming) playerEntity).setSwimming(packet.swim);
 		}

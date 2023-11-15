@@ -27,7 +27,7 @@ public class SwimPacket extends Packet {
 
 	@Override
 	public void processPacket(NetHandler netHandler) {
-		((ISwimPacket) netHandler).handleMobEnchant(this);
+		((ISwimPacket) netHandler).handleSwim(this);
 	}
 
 	@Override

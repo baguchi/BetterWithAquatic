@@ -25,8 +25,9 @@ public class KeyboardInputMixin {
 
 	@Inject(method = "tick", at = @At(value = "TAIL"))
 	public void tick(EntityPlayer entityplayer, CallbackInfo ci) {
-		if (entityplayer.isInWater()) {
+
 			if (entityplayer instanceof ISwiming) {
+				if (entityplayer.isInWater()) {
 				if (keys[0]) {
 					this.sprintTime = 0;
 					if (this.sprintTime < 9) {

@@ -63,14 +63,19 @@ public abstract class EntityPlayerMixin extends EntityLiving implements ISwiming
 				|| this.world.getBlockMaterial((int) (this.x), (int) (this.y + 1.0 - 0.1), (int) (this.z)) == Material.water) {
 				this.yd += (d3 - yd) * d4;
 			}
-			this.moveRelative(moveStrafing, moveForward, 0.025F);
+			this.xd += (this.getLookAngle().xCoord - xd) * 0.025F;
+			this.zd += (this.getLookAngle().zCoord - zd) * 0.025F;
 		}
 	}
 
 
 	@Inject(method = "onLivingUpdate", at = @At("HEAD"))
 	public void onLivingUpdate(CallbackInfo ci) {
-		if (this.world.getBlockId((int) (this.x), (int) this.y + 1, (int) (this.z)) != 0 && this.world.getBlockMaterial((int) (this.x), (int) this.y + 1, (int) (this.z)) != Material.water && (!this.isInWater())) {
+		if (!(this.world.getBlockId((int) (this.x), (int) this.y + 1, (int) (this.z)) != 0 && this.world.getBlockMaterial((int) (this.x), (int) this.y + 1, (int) (this.z)) != Material.water) && this.isVisuallyCrawling()) {
+			this.setSwimming(false);
+		}
+
+		if (this.isSwimming() && this.isInWater() && this.moveForward == 0 && this.moveStrafing == 0) {
 			this.setSwimming(false);
 		}
 		this.updateSwimAmount();
