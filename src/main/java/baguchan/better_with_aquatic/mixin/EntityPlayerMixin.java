@@ -27,7 +27,6 @@ public abstract class EntityPlayerMixin extends EntityLiving implements ISwiming
 	}
 
 	public void setSwimming(boolean p_20274_) {
-
 		if (p_20274_ && !this.swimming) {
 			this.heightOffset = 0.5f;
 			this.setSize(0.6F, 0.6F);
@@ -41,7 +40,7 @@ public abstract class EntityPlayerMixin extends EntityLiving implements ISwiming
 			this.setSize(0.6F, 1.8F);
 			float center = this.bbWidth / 2.0f;
 			float heightOfMob = this.bbHeight;
-			this.bb.setBounds(x - (double) center, y, z - (double) center, x + (double) center, y + (double) heightOfMob, z + (double) center);
+			this.bb.setBounds(x - (double) center, y - (double) this.heightOffset + (double) this.ySlideOffset, z - (double) center, x + (double) center, y - (double) this.heightOffset + (double) this.ySlideOffset + (double) heightOfMob, z + (double) center);
 		}
 		this.swimming = p_20274_;
 	}
