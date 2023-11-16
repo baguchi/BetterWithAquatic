@@ -53,4 +53,11 @@ public class EntityAnglerFish extends EntityBaseFish {
 		}
 		return false;
 	}
+
+	protected void attackEntity(Entity entity, float distance) {
+		if (this.attackTime <= 0 && distance < 1.5f && entity.bb.maxY > this.bb.minY && entity.bb.minY < this.bb.maxY) {
+			this.attackTime = 20;
+			entity.hurt(this, 1, DamageType.COMBAT);
+		}
+	}
 }
