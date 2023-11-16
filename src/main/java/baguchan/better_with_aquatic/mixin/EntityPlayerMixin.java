@@ -36,7 +36,6 @@ public abstract class EntityPlayerMixin extends EntityLiving implements ISwiming
 
 		} else if (!p_20274_ && this.swimming) {
 			this.heightOffset = 1.62f;
-			this.ySlideOffset = 0.0f;
 			this.setSize(0.6F, 1.8F);
 			float center = this.bbWidth / 2.0f;
 			float heightOfMob = this.bbHeight;

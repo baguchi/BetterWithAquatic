@@ -29,7 +29,7 @@ public class ModBlocks {
 		.setLightOpacity(1)
 		.setTextures("sea_grass.png")
 		.setBlockDrop(sea_grass)
-		.setTags(BlockTags.IS_WATER, BlockTags.PLACE_OVERWRITES, BlockTags.SHEARS_DO_SILK_TOUCH)
+		.setTags(BlockTags.IS_WATER, BlockTags.PLACE_OVERWRITES, BlockTags.SHEARS_DO_SILK_TOUCH, BlockTags.NOT_IN_CREATIVE_MENU)
 		.setBlockSound(BlockSounds.GRASS)
 		.build(new BlockWaterPlantFlow("sea_grass_flow", findOpenIds(IDUtils.getCurrBlockId()), Material.water));
 
