@@ -19,7 +19,9 @@ public abstract class EntityItemMixin extends Entity {
 
 	@Inject(method = "checkAndHandleWater", at = @At("HEAD"), cancellable = true)
 	public void checkAndHandleWater(CallbackInfoReturnable<Boolean> cir) {
-		cir.setReturnValue(this.world.isMaterialInBB(this.bb, Material.water));
+		if (this.world.isMaterialInBB(this.bb, Material.water)) {
+			cir.setReturnValue(true);
+		}
 	}
 
 	@Inject(method = "tick", at = @At("TAIL"))

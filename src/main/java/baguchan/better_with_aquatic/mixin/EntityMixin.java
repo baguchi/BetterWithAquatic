@@ -26,7 +26,9 @@ public class EntityMixin {
 
 	@Inject(method = "checkAndHandleWater", at = @At("HEAD"), cancellable = true)
 	public void checkAndHandleWater(CallbackInfoReturnable<Boolean> cir) {
-		cir.setReturnValue(this.world.isMaterialInBB(this.bb, Material.water));
+		if (this.world.isMaterialInBB(this.bb, Material.water)) {
+			cir.setReturnValue(true);
+		}
 	}
 
 	@Inject(method = "baseTick", at = @At(value = "INVOKE", target = "Lnet/minecraft/core/entity/Entity;checkAndHandleWater()Z", shift = At.Shift.AFTER))
