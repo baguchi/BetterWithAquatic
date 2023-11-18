@@ -5,6 +5,7 @@
   "compatibilityLevel": "JAVA_8",
   "mixins": [
     "BiomeMixin",
+    "EntityItemMixin",
     "EntityMixin",
     "EntityPlayerMixin",
     "NetHandlerMixin",
