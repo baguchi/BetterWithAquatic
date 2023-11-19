@@ -4,6 +4,7 @@ import baguchan.better_with_aquatic.BetterWithAquatic;
 import baguchan.better_with_aquatic.api.ISwiming;
 import net.minecraft.client.input.KeyboardInput;
 import net.minecraft.client.option.GameSettings;
+import net.minecraft.core.block.material.Material;
 import net.minecraft.core.entity.player.EntityPlayer;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
@@ -28,7 +29,7 @@ public class KeyboardInputMixin {
 	public void tick(EntityPlayer entityplayer, CallbackInfo ci) {
 
 		if (entityplayer instanceof ISwiming) {
-			if (entityplayer.isInWater() && !entityplayer.isSneaking()) {
+			if (entityplayer.isUnderLiquid(Material.water) && !entityplayer.isSneaking()) {
 				if (keys[0]) {
 					if (this.sprintTime < 9 && !this.pressedSprint) {
 						if (BetterWithAquatic.isEnableSwim()) {
