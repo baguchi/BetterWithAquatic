@@ -1,7 +1,9 @@
 package baguchan.better_with_aquatic.entity;
 
+import baguchan.better_with_aquatic.item.ModItems;
 import net.minecraft.core.entity.Entity;
 import net.minecraft.core.entity.player.EntityPlayer;
+import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.util.helper.DamageType;
 import net.minecraft.core.world.World;
 
@@ -60,4 +62,10 @@ public class EntityAnglerFish extends EntityBaseFish {
 			entity.hurt(this, 1, DamageType.COMBAT);
 		}
 	}
+
+	@Override
+	protected void dropFewItems() {
+		this.spawnAtLocation(new ItemStack(ModItems.small_bulb, 1, 0), 0.0f);
+	}
+
 }

@@ -2,6 +2,7 @@ package baguchan.better_with_aquatic;
 
 import baguchan.better_with_aquatic.block.ModBlocks;
 import baguchan.better_with_aquatic.compat.SpawnEggCompat;
+import baguchan.better_with_aquatic.item.ModItems;
 import baguchan.better_with_aquatic.util.IDUtils;
 import net.fabricmc.loader.api.entrypoint.PreLaunchEntrypoint;
 import net.minecraft.core.block.Block;
@@ -44,6 +45,7 @@ public class BetterWithAquaticPreLaunch implements PreLaunchEntrypoint {
 		Block.lightOpacity[Block.fluidWaterFlowing.id] = 1;
 		Block.lightOpacity[Block.fluidWaterStill.id] = 1;
 		ModBlocks.createBlocks();
+		ModItems.onInitialize();
 		if (spawnEggsModPresent) {
 			SpawnEggCompat.onInitialize();
 		}

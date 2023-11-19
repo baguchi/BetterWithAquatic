@@ -1,5 +1,6 @@
 package baguchan.better_with_aquatic;
 
+import baguchan.better_with_aquatic.crafting.ModCraftings;
 import baguchan.better_with_aquatic.entity.EntityAnglerFish;
 import baguchan.better_with_aquatic.entity.EntityFish;
 import baguchan.better_with_aquatic.entity.render.AnglerFishModel;
@@ -18,6 +19,7 @@ public class BetterWithAquatic implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+		ModCraftings.register();
 		EntityHelper.createEntity(EntityFish.class, new RenderFish(new FishModel(), 0.3F), 600, "Fish");
 		EntityHelper.createEntity(EntityAnglerFish.class, new RenderAnglerFish(new AnglerFishModel(), 0.4F), 601, "AnglerFish");
 		NetworkHelper.register(SwimPacket.class, true, false);

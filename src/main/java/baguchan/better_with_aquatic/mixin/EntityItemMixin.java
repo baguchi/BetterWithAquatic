@@ -24,11 +24,15 @@ public abstract class EntityItemMixin extends Entity {
 		}
 	}
 
-	@Inject(method = "tick", at = @At("TAIL"))
+	@Inject(method = "tick", at = @At(value = "FIELD", target = "Lnet/minecraft/core/entity/EntityItem;yd:D", ordinal = 0))
 	public void tick(CallbackInfo ci) {
 		if (this.wasInWater) {
-			this.yd += 0.1F;
-			this.yd *= (double) 0.85f;
+			this.yd += 0.045F;
+			if (this.yd > 0.0) {
+				this.xd *= (double) 0.95f;
+				this.yd *= (double) 0.95f;
+				this.zd *= (double) 0.95f;
+			}
 		}
 	}
 }

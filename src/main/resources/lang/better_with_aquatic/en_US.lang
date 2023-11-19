@@ -22,5 +22,11 @@ tile.better_with_aquatic.coral_purple.desc=A purple bioluminescent bone like blo
 tile.better_with_aquatic.coral_pink.name=Carnation Coral
 tile.better_with_aquatic.coral_pink.desc=A pink bioluminescent bone like block found in oceans.
 
+tile.better_with_aquatic.light_bulb.name=Light Bulb
+tile.better_with_aquatic.light_bulb.desc=Glow as warm...
+
+
 item.better_with_aquatic.spawnegg.fish.name=Fish
 item.better_with_aquatic.spawnegg.angler_fish.name=Angler Fish
+
+item.better_with_aquatic.small_bulb.name=Small Bulb

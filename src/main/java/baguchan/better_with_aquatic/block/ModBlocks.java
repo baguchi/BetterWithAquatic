@@ -8,6 +8,7 @@ import net.minecraft.core.block.material.Material;
 import net.minecraft.core.block.tag.BlockTags;
 import net.minecraft.core.item.Item;
 import net.minecraft.core.item.block.ItemBlock;
+import net.minecraft.core.item.tag.ItemTags;
 import turniplabs.halplibe.helper.BlockBuilder;
 
 import static turniplabs.halplibe.helper.BlockHelper.findOpenIds;
@@ -83,6 +84,14 @@ public class ModBlocks {
 		.setTags(BlockTags.MINEABLE_BY_SHEARS, BlockTags.SHEARS_DO_SILK_TOUCH)
 		.setBlockSound(BlockSounds.GRASS)
 		.build(new CoralBlock("coral_yellow", findOpenIds(IDUtils.getCurrBlockId()), Material.vegetable));
+	public static final Block light_blub = new BlockBuilder(BetterWithAquatic.MOD_ID)
+		.setHardness(0.5f)
+		.setResistance(1.5F)
+		.setLuminance(13)
+		.setTextures("light_bulb.png")
+		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+		.setBlockSound(BlockSounds.METAL)
+		.build(new Block("light_bulb", findOpenIds(IDUtils.getCurrBlockId()), Material.metal));
 
 
 
@@ -99,5 +108,6 @@ public class ModBlocks {
 		Item.itemsList[coral_purple.id] = new ItemBlock(coral_purple);
 		Item.itemsList[coral_red.id] = new ItemBlock(coral_red);
 		Item.itemsList[coral_yellow.id] = new ItemBlock(coral_yellow);
+		Item.itemsList[light_blub.id] = new ItemBlock(light_blub).withTags(ItemTags.renderFullbright);
 	}
 }
