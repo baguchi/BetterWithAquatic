@@ -1,6 +1,6 @@
 package baguchan.better_with_aquatic.mixin.client;
 
-import baguchan.better_with_aquatic.BetterWithAquatic;
+import baguchan.better_with_aquatic.BetterWithAquaticPreLaunch;
 import baguchan.better_with_aquatic.api.ISwiming;
 import net.minecraft.client.input.KeyboardInput;
 import net.minecraft.client.option.GameSettings;
@@ -32,7 +32,7 @@ public class KeyboardInputMixin {
 			if (entityplayer.isUnderLiquid(Material.water) && !entityplayer.isSneaking()) {
 				if (keys[0]) {
 					if (this.sprintTime < 9 && !this.pressedSprint) {
-						if (BetterWithAquatic.isEnableSwim()) {
+						if (BetterWithAquaticPreLaunch.isEnableSwim()) {
 							((ISwiming) entityplayer).setSwimming(true);
 						}
 					} else {

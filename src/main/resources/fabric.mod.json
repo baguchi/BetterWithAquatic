@@ -24,6 +24,9 @@
 		],
 		"terrain-api": [
 			"baguchan.better_with_aquatic.TerrainAPIPlugin"
+		],
+		"preLaunch": [
+			"baguchan.better_with_aquatic.BetterWithAquaticPreLaunch"
 		]
   },
   "mixins": [
