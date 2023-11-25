@@ -33,9 +33,9 @@ public class BlockWaterPlantStill extends BlockFluidStill {
 	private void func_30004_j(World world, int i, int j, int k) {
 		int l = world.getBlockMetadata(i, j, k);
 		world.editingBlocks = true;
-		world.setBlockAndMetadata(i, j, k, this.id + 1, l);
+		world.setBlockAndMetadata(i, j, k, ModBlocks.sea_grass_flow.id, l);
 		world.markBlocksDirty(i, j, k, i, j, k);
-		world.scheduleBlockUpdate(i, j, k, this.id + 1, this.tickRate());
+		world.scheduleBlockUpdate(i, j, k, ModBlocks.sea_grass_flow.id, this.tickRate());
 		world.editingBlocks = false;
 	}
 

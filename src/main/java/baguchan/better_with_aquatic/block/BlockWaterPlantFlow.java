@@ -26,7 +26,7 @@ public class BlockWaterPlantFlow extends BlockFluidFlowing {
 
 	private void setFluidStill(World world, int x, int y, int z) {
 		int meta = world.getBlockMetadata(x, y, z);
-		world.setBlockAndMetadata(x, y, z, this.id - 1, meta);
+		world.setBlockAndMetadata(x, y, z, ModBlocks.sea_grass.id, meta);
 		world.markBlocksDirty(x, y, z, x, y, z);
 		world.markBlockNeedsUpdate(x, y, z);
 	}
