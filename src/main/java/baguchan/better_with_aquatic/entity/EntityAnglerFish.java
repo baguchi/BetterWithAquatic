@@ -3,8 +3,10 @@ package baguchan.better_with_aquatic.entity;
 import baguchan.better_with_aquatic.item.ModItems;
 import net.minecraft.core.entity.Entity;
 import net.minecraft.core.entity.player.EntityPlayer;
+import net.minecraft.core.enums.LightLayer;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.util.helper.DamageType;
+import net.minecraft.core.util.helper.MathHelper;
 import net.minecraft.core.world.World;
 
 public class EntityAnglerFish extends EntityBaseFish {
@@ -31,6 +33,24 @@ public class EntityAnglerFish extends EntityBaseFish {
 	@Override
 	protected float getBlockPathWeight(int x, int y, int z) {
 		return 0.5f - this.world.getLightBrightness(x, y, z);
+	}
+
+	@Override
+	public boolean getCanSpawnHere() {
+		int k;
+		int j;
+		int i = MathHelper.floor_double(this.x);
+		if (this.world.getSavedLightValue(LightLayer.Block, i, j = MathHelper.floor_double(this.bb.minY), k = MathHelper.floor_double(this.z)) > 0) {
+			return false;
+		}
+		if (this.world.getSavedLightValue(LightLayer.Sky, i, j, k) > this.random.nextInt(32)) {
+			return false;
+		}
+		int blockLight = this.world.getBlockLightValue(i, j, k);
+		if (this.world.currentWeather != null && this.world.currentWeather.doMobsSpawnInDaylight) {
+			blockLight /= 2;
+		}
+		return blockLight <= 4 && super.getCanSpawnHere();
 	}
 
 	@Override
