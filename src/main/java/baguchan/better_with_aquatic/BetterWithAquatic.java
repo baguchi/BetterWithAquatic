@@ -20,8 +20,8 @@ public class BetterWithAquatic implements ModInitializer {
 	@Override
 	public void onInitialize() {
 		ModCraftings.register();
-		EntityHelper.createEntity(EntityFish.class, new RenderFish(new FishModel(), 0.3F), 600, "Fish");
-		EntityHelper.createEntity(EntityAnglerFish.class, new RenderAnglerFish(new AnglerFishModel(), 0.4F), 601, "AnglerFish");
+		EntityHelper.createEntity(EntityFish.class, new RenderFish(new FishModel(), 0.3F), BetterWithAquaticPreLaunch.entityID, "Fish");
+		EntityHelper.createEntity(EntityAnglerFish.class, new RenderAnglerFish(new AnglerFishModel(), 0.4F), BetterWithAquaticPreLaunch.entityID + 1, "AnglerFish");
 		NetworkHelper.register(SwimPacket.class, true, false);
 
 	}

@@ -10,10 +10,10 @@ public class IDUtils {
 	}
 
 	public static int getCurrBlockId() {
-		return curr_block_id;
+		return curr_block_id++;
 	}
 
 	public static int getCurrItemId() {
-		return curr_item_id;
+		return curr_item_id++;
 	}
 }
