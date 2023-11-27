@@ -12,7 +12,9 @@
     "NetServerHandlerMixin"
   ],
   "client": [
+    "MinecraftMixin",
     "client.ChunkRendererMixin",
+    "client.EntityClientPlayerMPMixin",
     "client.EntityPlayerSPMixin",
     "client.KeyboardInputMixin",
     "client.ModelPlayerMixin",

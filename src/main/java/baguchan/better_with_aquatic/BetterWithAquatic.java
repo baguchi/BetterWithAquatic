@@ -22,7 +22,7 @@ public class BetterWithAquatic implements ModInitializer {
 		ModCraftings.register();
 		EntityHelper.createEntity(EntityFish.class, new RenderFish(new FishModel(), 0.3F), BetterWithAquaticPreLaunch.entityID, "Fish");
 		EntityHelper.createEntity(EntityAnglerFish.class, new RenderAnglerFish(new AnglerFishModel(), 0.4F), BetterWithAquaticPreLaunch.entityID + 1, "AnglerFish");
-		NetworkHelper.register(SwimPacket.class, false, true);
+		NetworkHelper.register(SwimPacket.class, true, false);
 
 	}
 }

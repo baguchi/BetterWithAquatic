@@ -22,9 +22,11 @@ public abstract class EntityPlayerMixin extends EntityLiving implements ISwiming
 	private float swimAmount;
 	private float swimAmountO;
 
+
 	public EntityPlayerMixin(World world) {
 		super(world);
 	}
+
 
 	public void setSwimming(boolean p_20274_) {
 		if (p_20274_ && !this.swimming) {

@@ -19,7 +19,7 @@ import java.util.HashSet;
 public class ChunkRendererMixin {
 	@Inject(method = "updateRenderer", locals = LocalCapture.CAPTURE_FAILHARD, at = @At(value = "INVOKE", target = "Lnet/minecraft/core/block/Block;getRenderBlockPass()I", shift = At.Shift.AFTER))
 	private void updateRenderer(CallbackInfo ci, int minX, int minY, int minZ, int maxX, int maxY, int maxZ, HashSet lastSpecialTileEntities, int cacheRadius, ChunkCache chunkcache, RenderBlocks renderblocks, int renderPass, boolean needsMoreRenderPasses, boolean hasRenderedBlock, boolean hasStartedDrawing, int y, int z, int x, int blockId, Block block) {
-		if (block.id == ModBlocks.sea_grass.id) {
+		if (blockId == ModBlocks.sea_grass.id) {
 			if (renderPass == 1) {
 				BlockModel model = (BlockModel) BlockModelDispatcher.getInstance().getDispatch(Block.fluidWaterStill);
 
@@ -27,7 +27,7 @@ public class ChunkRendererMixin {
 			}
 		}
 
-		if (block.id == ModBlocks.sea_grass_flow.id) {
+		if (blockId == ModBlocks.sea_grass_flow.id) {
 			if (renderPass == 1) {
 				BlockModel model = (BlockModel) BlockModelDispatcher.getInstance().getDispatch(Block.fluidWaterStill);
 
