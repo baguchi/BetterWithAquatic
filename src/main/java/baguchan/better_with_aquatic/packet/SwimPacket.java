@@ -10,6 +10,8 @@ import java.io.IOException;
 public class SwimPacket extends Packet {
 	public boolean swim;
 
+	public SwimPacket() {
+	}
 
 	public SwimPacket(boolean swim) {
 		this.swim = swim;
