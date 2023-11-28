@@ -8,11 +8,11 @@
     "EntityItemMixin",
     "EntityMixin",
     "EntityPlayerMixin",
+    "MinecraftMixin",
     "NetHandlerMixin",
     "NetServerHandlerMixin"
   ],
   "client": [
-    "MinecraftMixin",
     "client.ChunkRendererMixin",
     "client.EntityClientPlayerMPMixin",
     "client.EntityPlayerSPMixin",

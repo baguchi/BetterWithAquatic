@@ -21,7 +21,7 @@ public class ModBlocks {
 		.setTextures("sea_grass.png")
 		.setTags(BlockTags.IS_WATER, BlockTags.PLACE_OVERWRITES, BlockTags.SHEARS_DO_SILK_TOUCH)
 		.setBlockSound(BlockSounds.GRASS)
-		.build(new BlockWaterPlantStill("sea_grass", IDUtils.getCurrBlockId(), Material.water).withLitInteriorSurface(true));
+		.build(new BlockWaterPlantStill("sea_grass", IDUtils.getCurrBlockId(), Material.water));
 	public static final Block sea_grass_flow = new BlockBuilder(BetterWithAquatic.MOD_ID)
 		.setHardness(0.0f)
 		.setResistance(100F)
@@ -30,7 +30,7 @@ public class ModBlocks {
 		.setBlockDrop(sea_grass)
 		.setTags(BlockTags.IS_WATER, BlockTags.PLACE_OVERWRITES, BlockTags.SHEARS_DO_SILK_TOUCH, BlockTags.NOT_IN_CREATIVE_MENU)
 		.setBlockSound(BlockSounds.GRASS)
-		.build(new BlockWaterPlantFlow("sea_grass_flow", IDUtils.getCurrBlockId(), Material.water).withLitInteriorSurface(true));
+		.build(new BlockWaterPlantFlow("sea_grass_flow", IDUtils.getCurrBlockId(), Material.water));
 
 	public static final Block coral_blue = new BlockBuilder(BetterWithAquatic.MOD_ID)
 		.setHardness(0.6f)
