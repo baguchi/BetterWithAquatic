@@ -1,6 +1,8 @@
 package baguchan.better_with_aquatic.mixin;
 
+import baguchan.better_with_aquatic.BetterWithAquaticPreLaunch;
 import baguchan.better_with_aquatic.entity.EntityAnglerFish;
+import baguchan.better_with_aquatic.entity.EntityDrowned;
 import baguchan.better_with_aquatic.entity.EntityFish;
 import net.minecraft.core.entity.SpawnListEntry;
 import net.minecraft.core.world.biome.Biome;
@@ -19,10 +21,18 @@ public class BiomeMixin {
 	@Shadow
 	protected List<SpawnListEntry> spawnableWaterCreatureList;
 
+	@Shadow
+	protected List<SpawnListEntry> spawnableMonsterList;
+
 	@Inject(method = "<init>", remap = false, at = @At("TAIL"))
 	private void addMobs(CallbackInfo ci) {
 		Biome biome = (Biome) (Object) this;
 		if (biome != Biomes.NETHER_NETHER) {
+			if (BetterWithAquaticPreLaunch.isEnableDrowned()) {
+				if (biome == Biomes.OVERWORLD_SWAMPLAND_MUDDY) {
+					spawnableMonsterList.add(new SpawnListEntry(EntityDrowned.class, 8));
+				}
+			}
 			spawnableWaterCreatureList.add(new SpawnListEntry(EntityFish.class, 15));
 			spawnableWaterCreatureList.add(new SpawnListEntry(EntityAnglerFish.class, 10));
 		}

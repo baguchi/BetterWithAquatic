@@ -218,6 +218,15 @@ public abstract class EntityBaseFish extends EntityWaterAnimal implements IPathG
 			this.xd *= 0.8;
 			this.yd *= 0.8;
 			this.zd *= 0.8;
+			this.prevLimbYaw = this.limbYaw;
+			double d2 = this.x - this.xo;
+			double d3 = this.z - this.zo;
+			float f5 = MathHelper.sqrt_double(d2 * d2 + d3 * d3) * 4.0f;
+			if (f5 > 1.0f) {
+				f5 = 1.0f;
+			}
+			this.limbYaw += (f5 - this.limbYaw) * 0.4f;
+			this.limbSwing += this.limbYaw;
 		} else {
 			super.moveEntityWithHeading(moveStrafing, moveForward);
 		}
