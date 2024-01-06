@@ -55,10 +55,10 @@ public class EntityMixin {
 				for (int i2 = i1; i2 < j1; ++i2) {
 					double d1;
 					Block block = Block.blocksList[this.world.getBlockId(k1, l1, i2)];
-					if (block == null || block.blockMaterial != material || !((double) l >= (d1 = (double) ((float) (l1 + 1) - BlockFluid.getPercentAir(this.world.getBlockMetadata(k1, l1, i2))))))
+					if (block == null || block.blockMaterial != material || !((double) l >= (d1 = (double) ((float) (l1 + 1) - BlockFluid.getWaterVolume(this.world.getBlockMetadata(k1, l1, i2))))))
 						continue;
 					flag = true;
-					block.velocityToAddToEntity(this.world, k1, l1, i2, entity, vec3d);
+					block.handleEntityInside(this.world, k1, l1, i2, entity, vec3d);
 				}
 			}
 		}

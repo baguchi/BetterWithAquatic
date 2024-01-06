@@ -30,7 +30,7 @@ public abstract class EntityBaseFish extends EntityWaterAnimal implements IPathG
 
 
 	@Override
-	protected String getLivingSound() {
+	public String getLivingSound() {
 		return null;
 	}
 

@@ -73,7 +73,7 @@ public class BlockWaterPlantStill extends BlockFluidStill {
 				} else {
 					world.setBlockWithNotify(x, y, z, Block.cobbleBasalt.id);
 				}
-				this.triggerLavaMixEffects(world, x, y, z);
+				this.fizz(world, x, y, z);
 			}
 		}
 		if (this.blockMaterial == Material.water) {
@@ -95,7 +95,7 @@ public class BlockWaterPlantStill extends BlockFluidStill {
 			}
 			if (flag && (meta = world.getBlockMetadata(x, y, z)) == 0) {
 				world.setBlockWithNotify(x, y, z, Block.cobbleLimestone.id);
-				this.triggerLavaMixEffects(world, x, y, z);
+				this.fizz(world, x, y, z);
 			}
 		}
 	}
@@ -123,8 +123,8 @@ public class BlockWaterPlantStill extends BlockFluidStill {
 	}
 
 	@Override
-	public void onBlockRemoval(World world, int x, int y, int z) {
-		super.onBlockRemoval(world, x, y, z);
+	public void onBlockRemoved(World world, int x, int y, int z, int data) {
+		super.onBlockRemoved(world, x, y, z, data);
 		if (world.getBlockId(x, y, z) == 0) {
 			world.setBlockAndMetadataWithNotify(x, y, z, fluidWaterStill.id, world.getBlockMetadata(x, y, z));
 		}

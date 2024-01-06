@@ -16,17 +16,23 @@
 
   "environment": "*",
   "entrypoints": {
-    "main": [
+		"main": [
 			"baguchan.better_with_aquatic.BetterWithAquatic"
 		],
-		"client": [
+		"beforeGameStart": [
+			"baguchan.better_with_aquatic.BetterWithAquatic"
+		],
+		"afterGameStart": [
+			"baguchan.better_with_aquatic.BetterWithAquatic"
+		],
+		"onRecipesReady": [
+			"baguchan.better_with_aquatic.BetterWithAquatic"
+		],
+		"afterClientStart": [
 			"baguchan.better_with_aquatic.BetterWithAquaticClient"
 		],
 		"terrain-api": [
 			"baguchan.better_with_aquatic.TerrainAPIPlugin"
-		],
-		"preLaunch": [
-			"baguchan.better_with_aquatic.BetterWithAquaticPreLaunch"
 		]
   },
   "mixins": [
@@ -35,10 +41,10 @@
 
   "depends": {
 		"fabricloader": ">=0.13.3",
-		"halplibe": ">=2.7.0",
-		"dragonfly": ">=0.4.2",
-		"better_ai": ">=1.2.0",
-		"terrain-api": ">=1.3.1"
+		"halplibe": ">=3.1.0",
+		"dragonfly": ">=1.0.4-7.1",
+		"better_ai": ">=2.0.1",
+		"terrain-api": ">=1.4.2-7.1"
   },
   "suggests": {
   }

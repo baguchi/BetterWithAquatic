@@ -12,7 +12,6 @@ import net.minecraft.core.world.World;
 public class EntityAnglerFish extends EntityBaseFish {
 	public EntityAnglerFish(World world) {
 		super(world);
-		this.highestSkinVariant = -1;
 		this.setSize(0.5F, 0.45F);
 		this.setPos(this.x, this.y, this.z);
 		this.health = 5;
@@ -47,7 +46,7 @@ public class EntityAnglerFish extends EntityBaseFish {
 			return false;
 		}
 		int blockLight = this.world.getBlockLightValue(i, j, k);
-		if (this.world.currentWeather != null && this.world.currentWeather.doMobsSpawnInDaylight) {
+		if (this.world.getCurrentWeather() != null && this.world.getCurrentWeather().doMobsSpawnInDaylight) {
 			blockLight /= 2;
 		}
 		return blockLight <= 4 && super.getCanSpawnHere();
@@ -56,7 +55,7 @@ public class EntityAnglerFish extends EntityBaseFish {
 	@Override
 	protected Entity findPlayerToAttack() {
 		EntityPlayer entityplayer = this.world.getClosestPlayerToEntity(this, 16.0);
-		if (entityplayer != null && this.canEntityBeSeen(entityplayer) && entityplayer.getGamemode().areMobsHostile) {
+		if (entityplayer != null && this.canEntityBeSeen(entityplayer) && entityplayer.getGamemode().areMobsHostile()) {
 			return entityplayer;
 		}
 		return null;

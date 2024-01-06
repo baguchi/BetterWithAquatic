@@ -33,7 +33,7 @@ public class BlockWaterPlantFlow extends BlockFluidFlowing {
 
 	@Override
 	public void updateTick(World world, int x, int y, int z, Random rand) {
-		int localFlowDecay = this.getFlowDecay(world, x, y, z);
+		int localFlowDecay = this.getDepth(world, x, y, z);
 		int flowDecayMod = 1;
 		if (this.blockMaterial == Material.lava && world.dimension != Dimension.nether) {
 			flowDecayMod = 2;
@@ -48,8 +48,8 @@ public class BlockWaterPlantFlow extends BlockFluidFlowing {
 			if (newFlowDecay >= 8 || surroundingFlowDecay < 0) {
 				newFlowDecay = -1;
 			}
-			if (this.getFlowDecay(world, x, y + 1, z) >= 0) {
-				int flowDecayAbove = this.getFlowDecay(world, x, y + 1, z);
+			if (this.getDepth(world, x, y + 1, z) >= 0) {
+				int flowDecayAbove = this.getDepth(world, x, y + 1, z);
 				newFlowDecay = flowDecayAbove >= 8 ? flowDecayAbove : flowDecayAbove + 8;
 			}
 			if (this.numAdjacentSources >= 2 && this.blockMaterial == Material.water) {
@@ -114,7 +114,7 @@ public class BlockWaterPlantFlow extends BlockFluidFlowing {
 			int i1 = world.getBlockId(i, j, k);
 			if (i1 > 0) {
 				if (this.blockMaterial == Material.lava) {
-					this.triggerLavaMixEffects(world, i, j, k);
+					this.fizz(world, i, j, k);
 				} else {
 					Block.blocksList[i1].dropBlockWithCause(world, EnumDropCause.WORLD, i, j, k, world.getBlockMetadata(i, j, k), null);
 				}
@@ -214,8 +214,8 @@ public class BlockWaterPlantFlow extends BlockFluidFlowing {
 	}
 
 	@Override
-	public void onBlockRemoval(World world, int x, int y, int z) {
-		super.onBlockRemoval(world, x, y, z);
+	public void onBlockRemoved(World world, int x, int y, int z, int data) {
+		super.onBlockRemoved(world, x, y, z, data);
 		if (world.getBlockId(x, y, z) == 0) {
 			world.setBlockAndMetadataWithNotify(x, y, z, fluidWaterFlowing.id, world.getBlockMetadata(x, y, z));
 		}

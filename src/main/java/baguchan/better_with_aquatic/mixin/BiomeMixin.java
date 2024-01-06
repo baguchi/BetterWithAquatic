@@ -1,6 +1,6 @@
 package baguchan.better_with_aquatic.mixin;
 
-import baguchan.better_with_aquatic.BetterWithAquaticPreLaunch;
+import baguchan.better_with_aquatic.BetterWithAquatic;
 import baguchan.better_with_aquatic.entity.EntityAnglerFish;
 import baguchan.better_with_aquatic.entity.EntityDrowned;
 import baguchan.better_with_aquatic.entity.EntityFish;
@@ -28,7 +28,7 @@ public class BiomeMixin {
 	private void addMobs(CallbackInfo ci) {
 		Biome biome = (Biome) (Object) this;
 		if (biome != Biomes.NETHER_NETHER) {
-			if (BetterWithAquaticPreLaunch.isEnableDrowned()) {
+			if (BetterWithAquatic.isEnableDrowned()) {
 				if (biome == Biomes.OVERWORLD_SWAMPLAND_MUDDY) {
 					spawnableMonsterList.add(new SpawnListEntry(EntityDrowned.class, 8));
 				}

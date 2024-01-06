@@ -16,7 +16,6 @@
     "client.ChunkRendererMixin",
     "client.EntityClientPlayerMPMixin",
     "client.EntityPlayerSPMixin",
-    "client.KeyboardInputMixin",
     "client.ModelPlayerMixin",
     "client.PlayerRendererMixin"
   ],
