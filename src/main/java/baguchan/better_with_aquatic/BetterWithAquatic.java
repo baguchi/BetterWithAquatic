@@ -8,7 +8,10 @@ import baguchan.better_with_aquatic.item.ModItems;
 import baguchan.better_with_aquatic.packet.SwimPacket;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.client.gui.guidebook.mobs.MobInfoRegistry;
+import net.minecraft.core.achievement.stat.StatList;
+import net.minecraft.core.achievement.stat.StatMob;
 import net.minecraft.core.block.Block;
+import net.minecraft.core.entity.EntityDispatcher;
 import net.minecraft.core.item.Item;
 import turniplabs.halplibe.helper.EntityHelper;
 import turniplabs.halplibe.helper.NetworkHelper;
@@ -59,6 +62,9 @@ public class BetterWithAquatic implements GameStartEntrypoint, ModInitializer {
 		MobInfoRegistry.register(EntityAnglerFish.class, "guidebook.section.mob.better_with_aquatic.angler_fish.name", "guidebook.section.mob.better_with_aquatic.angler_fish.desc", 3, 20, new MobInfoRegistry.MobDrop[]{new MobInfoRegistry.MobDrop(ModItems.small_bulb.getDefaultStack(), 1.0f, 1, 1)});
 		MobInfoRegistry.register(EntityDrowned.class, "guidebook.section.mob.better_with_aquatic.drowned.name", "guidebook.section.mob.better_with_aquatic.drowned.desc", 20, 300, new MobInfoRegistry.MobDrop[]{new MobInfoRegistry.MobDrop(Item.cloth.getDefaultStack(), 0.66f, 1, 2)});
 
+		StatList.mobEncounterStats.put("Fish", new StatMob(0x1050000 + EntityDispatcher.getEntityID(EntityFish.class), "stat.encounterMob", "Fish").registerStat());
+		StatList.mobEncounterStats.put("AnglerFish", new StatMob(0x1050000 + EntityDispatcher.getEntityID(EntityAnglerFish.class), "stat.encounterMob", "AnglerFish").registerStat());
+		StatList.mobEncounterStats.put("Drowned", new StatMob(0x1050000 + EntityDispatcher.getEntityID(EntityDrowned.class), "stat.encounterMob", "Drowned").registerStat());
 	}
 
 	@Override
