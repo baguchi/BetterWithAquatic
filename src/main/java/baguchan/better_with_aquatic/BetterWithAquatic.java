@@ -91,7 +91,6 @@ public class BetterWithAquatic implements GameStartEntrypoint, RecipeEntrypoint,
 	@Override
 	public void onRecipesReady() {
 		ModCraftings.register();
-
 	}
 
 	@Override

@@ -29,4 +29,11 @@ tile.better_with_aquatic.light_bulb.desc=Glow as warm...
 item.better_with_aquatic.spawnegg.fish.name=Fish
 item.better_with_aquatic.spawnegg.angler_fish.name=Angler Fish
 
+guidebook.section.mob.better_with_aquatic.fish.name=Fish
+guidebook.section.mob.better_with_aquatic.angler_fish.name=Angler Fish
+guidebook.section.mob.better_with_aquatic.drowned.name=Drowned
+guidebook.section.mob.better_with_aquatic.fish.desc=fish from ancient times
+guidebook.section.mob.better_with_aquatic.angler_fish.desc=A mutated fish that lives in the dark. If you defeat it, you will get the material for the light source.
+guidebook.section.mob.better_with_aquatic.drowned.desc=Mutated zombie, good at swimming in water
+
 item.better_with_aquatic.small_bulb.name=Small Bulb
