@@ -10,7 +10,7 @@ import org.spongepowered.asm.mixin.Shadow;
 @Mixin(value = NetHandler.class, remap = false)
 public class NetHandlerMixin implements ISwimPacket {
 
-	public void handleSwim(SwimPacket packet) {
+	public void betterWithAquatic$handleSwim(SwimPacket packet) {
 		this.handleInvalidPacket(packet);
 	}
 

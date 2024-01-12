@@ -29,9 +29,9 @@ public abstract class EntityItemMixin extends Entity {
 		if (this.wasInWater) {
 			this.yd += 0.045F;
 			if (this.yd > 0.0) {
-				this.xd *= (double) 0.95f;
-				this.yd *= (double) 0.95f;
-				this.zd *= (double) 0.95f;
+				this.xd *= 0.95f;
+				this.yd *= 0.95f;
+				this.zd *= 0.95f;
 			}
 		}
 	}

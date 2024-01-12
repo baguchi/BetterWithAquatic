@@ -1,0 +1,27 @@
+[
+  {
+    "name": "aquatic:workbench/light_bulb",
+    "type": "minecraft:crafting/shaped",
+    "pattern": [
+      "TTT",
+      "TTT",
+      "TTT"
+    ],
+    "symbols": [
+      {
+        "symbol": "T",
+        "stack": {
+          "key": "item.better_with_aquatic.small_bulb",
+          "amount": 1,
+          "meta": 0
+        }
+      }
+    ],
+    "result": {
+      "key": "tile.better_with_aquatic.light_bulb",
+      "amount": 1,
+      "meta": 0
+    },
+    "consumeContainers": false
+  }
+]

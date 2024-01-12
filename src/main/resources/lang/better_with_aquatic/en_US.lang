@@ -32,8 +32,8 @@ item.better_with_aquatic.spawnegg.angler_fish.name=Angler Fish
 guidebook.section.mob.better_with_aquatic.fish.name=Fish
 guidebook.section.mob.better_with_aquatic.angler_fish.name=Angler Fish
 guidebook.section.mob.better_with_aquatic.drowned.name=Drowned
-guidebook.section.mob.better_with_aquatic.fish.desc=fish from ancient times
-guidebook.section.mob.better_with_aquatic.angler_fish.desc=A mutated fish that lives in the dark. If you defeat it, you will get the material for the light source.
-guidebook.section.mob.better_with_aquatic.drowned.desc=Mutated zombie, good at swimming in water
+guidebook.section.mob.better_with_aquatic.fish.desc=A small fish, likes to swim. Can survive in salt and fresh water
+guidebook.section.mob.better_with_aquatic.angler_fish.desc=A not so small fish, likes to swim, uses its bioluminescent bulb to lure in mobs and players.
+guidebook.section.mob.better_with_aquatic.drowned.desc=A waterlogged zombie, has adapted to the water and learned to swim.
 
 item.better_with_aquatic.small_bulb.name=Small Bulb

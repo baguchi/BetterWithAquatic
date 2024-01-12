@@ -6,12 +6,14 @@ import net.minecraft.client.entity.player.EntityClientPlayerMP;
 import net.minecraft.core.entity.player.EntityPlayer;
 import net.minecraft.core.world.World;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(value = EntityClientPlayerMP.class, remap = false)
 public abstract class EntityClientPlayerMPMixin extends EntityPlayer implements ISwiming {
+	@Unique
 	public boolean swimmingOld;
 
 	public EntityClientPlayerMPMixin(World world) {

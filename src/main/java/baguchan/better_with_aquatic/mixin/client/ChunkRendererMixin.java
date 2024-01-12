@@ -24,7 +24,7 @@ public class ChunkRendererMixin {
 	private void updateRenderer(CallbackInfo ci, int minX, int minY, int minZ, int maxX, int maxY, int maxZ, HashSet lastSpecialTileEntities, int cacheRadius, ChunkCache chunkcache, RenderBlocks renderblocks, int renderPass, boolean needsMoreRenderPasses, boolean hasRenderedBlock, boolean hasStartedDrawing, int y, int z, int x, int blockId, Block block) {
 		if (blockId == ModBlocks.sea_grass.id) {
 			if (renderPass == 1) {
-				BlockModel model = (BlockModel) BlockModelDispatcher.getInstance().getDispatch(Block.fluidWaterStill);
+				BlockModel model = BlockModelDispatcher.getInstance().getDispatch(Block.fluidWaterStill);
 
 
 				this.skipRenderPass[1] = model.render(Block.fluidWaterStill, x, y, z);
@@ -33,7 +33,7 @@ public class ChunkRendererMixin {
 
 		if (blockId == ModBlocks.sea_grass_flow.id) {
 			if (renderPass == 1) {
-				BlockModel model = (BlockModel) BlockModelDispatcher.getInstance().getDispatch(Block.fluidWaterStill);
+				BlockModel model = BlockModelDispatcher.getInstance().getDispatch(Block.fluidWaterStill);
 
 				this.skipRenderPass[1] = model.render(Block.fluidWaterFlowing, x, y, z);
 			}

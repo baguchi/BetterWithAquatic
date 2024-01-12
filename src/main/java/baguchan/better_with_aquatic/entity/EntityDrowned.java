@@ -54,11 +54,7 @@ public class EntityDrowned extends EntityZombie implements IPathGetter, ISwiming
 				this.setPathFinder(this, this.betterPathFinder);
 			}
 		}
-		if (this.isInWater()) {
-			setSwimming(true);
-		} else {
-			setSwimming(false);
-		}
+		setSwimming(this.isInWater());
 		this.updateSwimAmount();
 	}
 

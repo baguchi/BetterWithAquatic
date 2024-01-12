@@ -29,7 +29,7 @@ public class SwimPacket extends Packet {
 
 	@Override
 	public void processPacket(NetHandler netHandler) {
-		((ISwimPacket) netHandler).handleSwim(this);
+		((ISwimPacket) netHandler).betterWithAquatic$handleSwim(this);
 	}
 
 	@Override

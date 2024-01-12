@@ -99,6 +99,7 @@ public class ModBlocks {
 
 	static {
 		Item.itemsList[sea_grass.id] = new ItemBlock(sea_grass);
+		Item.itemsList[sea_grass_flow.id] = new ItemBlock(sea_grass_flow);
 		Item.itemsList[coral_blue.id] = new ItemBlock(coral_blue);
 		Item.itemsList[coral_cyan.id] = new ItemBlock(coral_cyan);
 		Item.itemsList[coral_green.id] = new ItemBlock(coral_green);
