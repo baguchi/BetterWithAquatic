@@ -29,11 +29,13 @@ tile.better_with_aquatic.light_bulb.desc=Glow as warm...
 item.better_with_aquatic.spawnegg.fish.name=Fish
 item.better_with_aquatic.spawnegg.angler_fish.name=Angler Fish
 
-guidebook.section.mob.better_with_aquatic.fish.name=Fish
-guidebook.section.mob.better_with_aquatic.angler_fish.name=Angler Fish
-guidebook.section.mob.better_with_aquatic.drowned.name=Drowned
-guidebook.section.mob.better_with_aquatic.fish.desc=A small fish, likes to swim. Can survive in salt and fresh water
-guidebook.section.mob.better_with_aquatic.angler_fish.desc=A not so small fish, likes to swim, uses its bioluminescent bulb to lure in mobs and players.
-guidebook.section.mob.better_with_aquatic.drowned.desc=A waterlogged zombie, has adapted to the water and learned to swim.
+section.better_with_aquatic.fish.name=Fish
+section.better_with_aquatic.angler_fish.name=Angler Fish
+section.better_with_aquatic.drowned.name=Drowned
+section.better_with_aquatic.frog.name=Frog
+section.better_with_aquatic.fish.desc=A small fish, likes to swim. Can survive in salt and fresh water
+section.better_with_aquatic.angler_fish.desc=A not so small fish, likes to swim, uses its bioluminescent bulb to lure in mobs and players.
+section.better_with_aquatic.drowned.desc=A waterlogged zombie, has adapted to the water and learned to swim.
+section.better_with_aquatic.frog.desc=A small Frog, they can swim and hop the ground. they often eat slime.
 
 item.better_with_aquatic.small_bulb.name=Small Bulb

@@ -1,5 +1,6 @@
-package baguchan.better_with_aquatic.entity;
+package baguchan.better_with_aquatic.entity.render;
 
+import baguchan.better_with_aquatic.entity.EntityDrowned;
 import net.minecraft.core.entity.EntityLiving;
 import net.minecraft.core.util.helper.MathHelper;
 import useless.dragonfly.model.entity.BenchEntityModel;

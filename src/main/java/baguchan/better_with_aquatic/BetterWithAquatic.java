@@ -4,6 +4,7 @@ import baguchan.better_with_aquatic.block.ModBlocks;
 import baguchan.better_with_aquatic.entity.EntityAnglerFish;
 import baguchan.better_with_aquatic.entity.EntityDrowned;
 import baguchan.better_with_aquatic.entity.EntityFish;
+import baguchan.better_with_aquatic.entity.EntityFrog;
 import baguchan.better_with_aquatic.item.ModItems;
 import baguchan.better_with_aquatic.packet.SwimPacket;
 import net.fabricmc.api.ModInitializer;
@@ -57,14 +58,17 @@ public class BetterWithAquatic implements GameStartEntrypoint, ModInitializer {
 		EntityHelper.Core.createEntity(EntityFish.class, entityID, "Fish");
 		EntityHelper.Core.createEntity(EntityAnglerFish.class, entityID + 1, "AnglerFish");
 		EntityHelper.Core.createEntity(EntityDrowned.class, entityID + 2, "Drowned");
+		EntityHelper.Core.createEntity(EntityFrog.class, entityID + 3, "Frog");
 
-		MobInfoRegistry.register(EntityFish.class, "guidebook.section.mob.better_with_aquatic.fish.name", "guidebook.section.mob.better_with_aquatic.fish.desc", 3, 20, new MobInfoRegistry.MobDrop[]{new MobInfoRegistry.MobDrop(Item.foodFishRaw.getDefaultStack(), 1.0f, 1, 1)});
-		MobInfoRegistry.register(EntityAnglerFish.class, "guidebook.section.mob.better_with_aquatic.angler_fish.name", "guidebook.section.mob.better_with_aquatic.angler_fish.desc", 3, 20, new MobInfoRegistry.MobDrop[]{new MobInfoRegistry.MobDrop(ModItems.small_bulb.getDefaultStack(), 1.0f, 1, 1)});
-		MobInfoRegistry.register(EntityDrowned.class, "guidebook.section.mob.better_with_aquatic.drowned.name", "guidebook.section.mob.better_with_aquatic.drowned.desc", 20, 300, new MobInfoRegistry.MobDrop[]{new MobInfoRegistry.MobDrop(Item.cloth.getDefaultStack(), 0.66f, 1, 2)});
+		MobInfoRegistry.register(EntityFish.class, "section.better_with_aquatic.fish.name", "section.better_with_aquatic.fish.desc", 3, 20, new MobInfoRegistry.MobDrop[]{new MobInfoRegistry.MobDrop(Item.foodFishRaw.getDefaultStack(), 1.0f, 1, 1)});
+		MobInfoRegistry.register(EntityAnglerFish.class, "section.better_with_aquatic.angler_fish.name", "section.better_with_aquatic.angler_fish.desc", 3, 20, new MobInfoRegistry.MobDrop[]{new MobInfoRegistry.MobDrop(ModItems.small_bulb.getDefaultStack(), 1.0f, 1, 1)});
+		MobInfoRegistry.register(EntityDrowned.class, "section.better_with_aquatic.drowned.name", "section.better_with_aquatic.drowned.desc", 20, 300, new MobInfoRegistry.MobDrop[]{new MobInfoRegistry.MobDrop(Item.cloth.getDefaultStack(), 0.66f, 1, 2)});
+		MobInfoRegistry.register(EntityFrog.class, "section.better_with_aquatic.frog.name", "section.better_with_aquatic.frog.desc", 8, 0, new MobInfoRegistry.MobDrop[]{});
 
 		StatList.mobEncounterStats.put("Fish", new StatMob(0x1050000 + EntityDispatcher.getEntityID(EntityFish.class), "stat.encounterMob", "Fish").registerStat());
 		StatList.mobEncounterStats.put("AnglerFish", new StatMob(0x1050000 + EntityDispatcher.getEntityID(EntityAnglerFish.class), "stat.encounterMob", "AnglerFish").registerStat());
 		StatList.mobEncounterStats.put("Drowned", new StatMob(0x1050000 + EntityDispatcher.getEntityID(EntityDrowned.class), "stat.encounterMob", "Drowned").registerStat());
+		StatList.mobEncounterStats.put("Frog", new StatMob(0x1050000 + EntityDispatcher.getEntityID(EntityFrog.class), "stat.encounterMob", "Frog").registerStat());
 	}
 
 	@Override

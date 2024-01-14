@@ -19,8 +19,8 @@ public abstract class EntityBaseFish extends EntityWaterAnimal implements IPathG
 		super(world);
 		this.scoreValue = 20;
 		this.health = 3;
-		this.heightOffset = 0.2F;
-		this.footSize = 0.5F;
+		this.heightOffset = 0.1F;
+		this.footSize = 0.0F;
 		this.moveSpeed = 0.1F;
 		this.betterSwimPathFinder = new BetterSwimPathFinder(world);
 		this.setPathFinder(this, this.betterSwimPathFinder);
