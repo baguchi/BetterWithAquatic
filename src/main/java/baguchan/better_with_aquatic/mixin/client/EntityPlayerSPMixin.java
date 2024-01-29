@@ -1,10 +1,8 @@
 package baguchan.better_with_aquatic.mixin.client;
 
-import baguchan.better_with_aquatic.BetterWithAquatic;
 import baguchan.better_with_aquatic.api.ISwiming;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.player.EntityPlayerSP;
-import net.minecraft.core.block.material.Material;
 import net.minecraft.core.entity.player.EntityPlayer;
 import net.minecraft.core.util.helper.MathHelper;
 import net.minecraft.core.world.World;
@@ -13,7 +11,6 @@ import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(value = EntityPlayerSP.class, remap = false)
@@ -82,23 +79,6 @@ public abstract class EntityPlayerSPMixin extends EntityPlayer implements ISwimi
 				}
 			}
 			cir.setReturnValue(false);
-		}
-	}
-
-	@Inject(method = "onLivingUpdate", at = @At(value = "TAIL"))
-	public void onLivingUpdateSwiming(CallbackInfo ci) {
-		if (this.isUnderLiquid(Material.water) && !this.isSneaking()) {
-			if (BetterWithAquatic.isEnableSwim() && mc.gameSettings.keySprint.isPressed()) {
-				if (!this.pressedSprint) {
-					this.setSwimming(true);
-					this.pressedSprint = true;
-				}
-			} else {
-				if (this.pressedSprint) {
-					this.setSwimming(false);
-					this.pressedSprint = false;
-				}
-			}
 		}
 	}
 }

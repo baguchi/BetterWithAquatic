@@ -54,7 +54,6 @@ public class BetterWithAquatic implements GameStartEntrypoint, ModInitializer {
 		Block.lightBlock[Block.fluidWaterStill.id] = 1;
 		ModBlocks.createBlocks();
 		ModItems.onInitialize();
-
 		EntityHelper.Core.createEntity(EntityFish.class, entityID, "Fish");
 		EntityHelper.Core.createEntity(EntityAnglerFish.class, entityID + 1, "AnglerFish");
 		EntityHelper.Core.createEntity(EntityDrowned.class, entityID + 2, "Drowned");

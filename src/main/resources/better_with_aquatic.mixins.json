@@ -17,6 +17,7 @@
     "client.EntityClientPlayerMPMixin",
     "client.EntityPlayerSPMixin",
     "client.ModelPlayerMixin",
+    "client.PlayerInputMixin",
     "client.PlayerRendererMixin"
   ],
   "injectors": {
