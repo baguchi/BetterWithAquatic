@@ -37,6 +37,23 @@ public class EntityDrowned extends EntityZombie implements IPathGetter, ISwiming
 		return "/assets/better_with_aquatic/entity/drowned.png";
 	}
 
+	@Override
+	public String getLivingSound() {
+		return "better_with_aquatic.mob.drowned.drowned_idle";
+	}
+
+	@Override
+	protected String getHurtSound() {
+		if (random.nextBoolean()) {
+			return "better_with_aquatic.mob.drowned.drowned_hurt_extra";
+		}
+		return "better_with_aquatic.mob.drowned.drowned_hurt";
+	}
+
+	@Override
+	protected String getDeathSound() {
+		return "better_with_aquatic.mob.drowned.drowned_death";
+	}
 
 	@Override
 	public void tick() {
