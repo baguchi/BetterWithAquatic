@@ -22,7 +22,6 @@ public class EntityDrowned extends EntityZombie implements IPathGetter, ISwiming
 		super(world);
 		this.setPathFinder(this, new BetterSwimWalkPathFinder(world));
 		this.setPathfindingMalus(this, BlockPath.WATER, 0.0F);
-		this.setPathfindingMalus(this, BlockPath.OPEN, -1.0F);
 		this.footSize = 1f;
 		this.skinName = "drowned";
 	}
