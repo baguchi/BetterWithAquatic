@@ -89,9 +89,8 @@ public abstract class EntityPlayerMixin extends EntityLiving implements ISwiming
 		}
 
 		if ((block instanceof BlockFluid || block == null) && this.isSwimming() && this.isInWater() && this.moveForward == 0 && this.moveStrafing == 0) {
-			if (this.swimAmount >= 1F) {
-				this.setSwimming(false);
-			}
+			this.setSwimming(false);
+
 		}
 		this.updateSwimAmount();
 	}

@@ -44,7 +44,7 @@
 
   "depends": {
 		"fabricloader": ">=0.13.3",
-		"halplibe": ">=3.1.0",
+		"halplibe": ">=3.4.14",
 		"dragonfly": ">=1.4.2-7.1",
 		"better_ai": ">=2.0.1",
 		"terrain-api": ">=1.4.2-7.1"

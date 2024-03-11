@@ -17,7 +17,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(value = PlayerInput.class, remap = false)
 public class PlayerInputMixin {
 
-	private int sprintTime = 20;
+	protected int sprintTimer;
 	private boolean pressedSprint = false;
 	@Shadow
 	@Final
@@ -30,23 +30,18 @@ public class PlayerInputMixin {
 
 	@Inject(method = "tick", at = @At(value = "TAIL"))
 	public void tick(EntityPlayer entityplayer, CallbackInfo ci) {
-
+		if (this.sprintTimer > 0) {
+			--this.sprintTimer;
+		}
 		if (entityplayer instanceof ISwiming) {
 			if (entityplayer.isUnderLiquid(Material.water) && !entityplayer.isSneaking()) {
 				if (this.pressedForward) {
-					if (this.sprintTime < 9 && !this.pressedSprint) {
-						if (BetterWithAquatic.isEnableSwim()) {
-							((ISwiming) entityplayer).setSwimming(true);
-						}
+					if (this.sprintTimer == 0) {
+						this.sprintTimer = 7;
 					} else {
-						this.pressedSprint = true;
+						((ISwiming) entityplayer).setSwimming(true);
+						this.sprintTimer = 0;
 					}
-					this.sprintTime = 0;
-				} else {
-					if (this.sprintTime < 20) {
-						this.sprintTime++;
-					}
-					this.pressedSprint = false;
 				}
 
 				if (BetterWithAquatic.isEnableSwim() && mc.gameSettings.keySprint.isPressed()) {
