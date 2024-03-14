@@ -6,8 +6,6 @@ import baguchan.better_with_aquatic.entity.EntityDrowned;
 import baguchan.better_with_aquatic.entity.EntityFish;
 import baguchan.better_with_aquatic.entity.EntityFrog;
 import baguchan.better_with_aquatic.item.ModItems;
-import baguchan.better_with_aquatic.packet.AABBPacket;
-import baguchan.better_with_aquatic.packet.SizePacket;
 import baguchan.better_with_aquatic.packet.SwimPacket;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.client.gui.guidebook.mobs.MobInfoRegistry;
@@ -49,8 +47,6 @@ public class BetterWithAquatic implements GameStartEntrypoint, ModInitializer {
 	@Override
 	public void onInitialize() {
 		NetworkHelper.register(SwimPacket.class, true, false);
-		NetworkHelper.register(AABBPacket.class, true, false);
-		NetworkHelper.register(SizePacket.class, true, false);
 	}
 	@Override
 	public void beforeGameStart() {

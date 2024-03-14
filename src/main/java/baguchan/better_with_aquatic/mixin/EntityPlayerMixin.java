@@ -33,15 +33,13 @@ public abstract class EntityPlayerMixin extends EntityLiving implements ISwiming
 
 	public void setSwimming(boolean p_20274_) {
 		if (p_20274_ && !this.swimming) {
-			this.heightOffset = 0.5f;
 			this.setSize(0.6F, 0.6F);
-			float center = this.bbWidth / 2.0f;
-			float heightOfMob = this.bbHeight;
-			this.bb.setBounds(x - (double) center, y - (double) this.heightOffset + (double) this.ySlideOffset, z - (double) center, x + (double) center, y - (double) this.heightOffset + (double) this.ySlideOffset + (double) heightOfMob, z + (double) center);
-
+			this.heightOffset = 0.42f;
+			this.setPos(this.x, this.y - 1.2, this.z);
 		} else if (!p_20274_ && this.swimming) {
-			this.heightOffset = 1.62f;
 			this.setSize(0.6F, 1.8F);
+
+			this.heightOffset = 1.62f;
 			this.setPos(this.x, this.y + 1.2F, this.z);
 		}
 		this.swimming = p_20274_;
@@ -71,7 +69,7 @@ public abstract class EntityPlayerMixin extends EntityLiving implements ISwiming
 			double d4 = d3 < -0.2 ? 0.04 : 0.1;
 			if (d3 <= 0.0
 				|| this.isJumping
-				|| this.world.getBlockMaterial(MathHelper.floor_double(this.x), MathHelper.floor_double(this.y + 1.0 - 0.5), MathHelper.floor_double(this.z)) == Material.water) {
+				|| this.world.isMaterialInBB(this.bb, Material.water)) {
 				this.yd += (d3 - yd) * d4;
 			}
 			this.xd += (this.getLookAngle().xCoord - xd) * 0.025F;

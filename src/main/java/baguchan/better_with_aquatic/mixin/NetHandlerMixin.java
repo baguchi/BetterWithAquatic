@@ -1,8 +1,6 @@
 package baguchan.better_with_aquatic.mixin;
 
-import baguchan.better_with_aquatic.packet.AABBPacket;
 import baguchan.better_with_aquatic.packet.ISwimPacket;
-import baguchan.better_with_aquatic.packet.SizePacket;
 import baguchan.better_with_aquatic.packet.SwimPacket;
 import net.minecraft.core.net.handler.NetHandler;
 import net.minecraft.core.net.packet.Packet;
@@ -18,15 +16,5 @@ public class NetHandlerMixin implements ISwimPacket {
 
 	@Shadow
 	public void handleInvalidPacket(Packet packet) {
-	}
-
-	@Override
-	public void betterWithAquatic$handleAABB(AABBPacket packet) {
-		this.handleInvalidPacket(packet);
-	}
-
-	@Override
-	public void betterWithAquatic$handleSize(SizePacket packet) {
-		this.handleInvalidPacket(packet);
 	}
 }

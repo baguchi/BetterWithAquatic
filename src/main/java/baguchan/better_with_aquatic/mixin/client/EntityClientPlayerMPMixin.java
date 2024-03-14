@@ -1,8 +1,6 @@
 package baguchan.better_with_aquatic.mixin.client;
 
 import baguchan.better_with_aquatic.api.ISwiming;
-import baguchan.better_with_aquatic.packet.AABBPacket;
-import baguchan.better_with_aquatic.packet.SizePacket;
 import baguchan.better_with_aquatic.packet.SwimPacket;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.player.EntityClientPlayerMP;
@@ -37,19 +35,6 @@ public abstract class EntityClientPlayerMPMixin extends EntityPlayerSP implement
 			this.swimmingOld = this.isSwimming();
 			EntityClientPlayerMP clientPlayerMP = (EntityClientPlayerMP) (Object) this;
 			clientPlayerMP.sendQueue.addToSendQueue(new SwimPacket(this.isSwimming()));
-		}
-		if (this.oldAABB != this.bb || this.oldOffset != this.heightOffset) {
-			this.oldAABB = this.bb;
-			this.oldOffset = this.heightOffset;
-			EntityClientPlayerMP clientPlayerMP = (EntityClientPlayerMP) (Object) this;
-			clientPlayerMP.sendQueue.addToSendQueue(new AABBPacket(this.bb.minX, this.bb.minY, this.bb.minZ, this.bb.maxX, this.bb.maxY, this.bb.maxZ, this.heightOffset));
-		}
-
-		if (this.oldWidth != this.bbWidth || this.oldHeight != this.bbHeight) {
-			this.oldWidth = this.bbWidth;
-			this.oldHeight = this.bbHeight;
-			EntityClientPlayerMP clientPlayerMP = (EntityClientPlayerMP) (Object) this;
-			clientPlayerMP.sendQueue.addToSendQueue(new SizePacket(this.bbWidth, this.bbHeight));
 		}
 	}
 
