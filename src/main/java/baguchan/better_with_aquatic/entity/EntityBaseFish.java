@@ -18,7 +18,6 @@ public abstract class EntityBaseFish extends EntityWaterAnimal implements IPathG
 	public EntityBaseFish(World world) {
 		super(world);
 		this.scoreValue = 20;
-		this.health = 3;
 		this.heightOffset = 0.1F;
 		this.footSize = 0.0F;
 		this.moveSpeed = 0.1F;
@@ -28,6 +27,10 @@ public abstract class EntityBaseFish extends EntityWaterAnimal implements IPathG
 		this.setPathfindingMalus(this, BlockPath.OPEN, -1.0F);
 	}
 
+	@Override
+	public int getMaxHealth() {
+		return 3;
+	}
 
 	@Override
 	public String getLivingSound() {

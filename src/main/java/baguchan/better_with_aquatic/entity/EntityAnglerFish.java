@@ -14,8 +14,12 @@ public class EntityAnglerFish extends EntityBaseFish {
 		super(world);
 		this.setSize(0.5F, 0.45F);
 		this.setPos(this.x, this.y, this.z);
-		this.health = 5;
 		this.skinName = "angler_fish";
+	}
+
+	@Override
+	public int getMaxHealth() {
+		return 5;
 	}
 
 	@Override

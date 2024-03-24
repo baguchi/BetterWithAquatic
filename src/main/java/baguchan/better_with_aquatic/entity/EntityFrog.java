@@ -35,11 +35,15 @@ public class EntityFrog extends EntityAnimal implements IPathGetter, ISwiming {
 		this.frogJumpDelay = 20;
 
 		this.scoreValue = 0;
-		this.health = 6;
 		this.heightOffset = 0.0F;
 		this.moveSpeed = 0.75F;
 		this.setSize(0.45F, 0.35F);
 		this.setPos(this.x, this.y, this.z);
+	}
+
+	@Override
+	public int getMaxHealth() {
+		return 6;
 	}
 
 	@Override
