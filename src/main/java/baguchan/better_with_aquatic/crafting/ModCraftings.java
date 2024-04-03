@@ -20,4 +20,9 @@ public class ModCraftings implements RecipeEntrypoint {
 		Registries.RECIPES.register("aquatic", AQUATIC);
 		DataLoader.loadRecipesFromFile("/assets/better_with_aquatic/recipes/workbench.json");
 	}
+
+	@Override
+	public void initNamespaces() {
+
+	}
 }
