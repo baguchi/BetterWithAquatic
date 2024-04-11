@@ -1,0 +1,41 @@
+tile.better_with_aquatic.sea_grass.name=Erba marina
+tile.better_with_aquatic.sea_grass.desc=Pianta presente nell'acqua.
+
+tile.better_with_aquatic.coral_red.name=Corallo rosso
+tile.better_with_aquatic.coral_red.desc=Un blocco bioluminescente rosso simile a un osso trovato negli oceani.
+
+tile.better_with_aquatic.coral_yellow.name=Corallo giallo
+tile.better_with_aquatic.coral_yellow.desc=Un blocco bioluminescente giallo simile a un osso trovato negli oceani.
+
+tile.better_with_aquatic.coral_green.name=Corallo verde
+tile.better_with_aquatic.coral_green.desc=Un blocco bioluminescente verde simile a un osso trovato negli oceani.
+
+tile.better_with_aquatic.coral_cyan.name=Corallo azzurro
+tile.better_with_aquatic.coral_cyan.desc=Un blocco bioluminescente azzurro simile a un osso trovato negli oceani.
+
+tile.better_with_aquatic.coral_blue.name=Corallo blu
+tile.better_with_aquatic.coral_blue.desc=Un blocco bioluminescente blu simile a un osso trovato negli oceani.
+
+tile.better_with_aquatic.coral_purple.name=Corallo viola
+tile.better_with_aquatic.coral_purple.desc=Un blocco bioluminescente viola simile a un osso trovato negli oceani.
+
+tile.better_with_aquatic.coral_pink.name=Corallo rosa
+tile.better_with_aquatic.coral_pink.desc=Un blocco bioluminescente rosa simile a un osso trovato negli oceani.
+
+tile.better_with_aquatic.light_bulb.name=Lampadina
+tile.better_with_aquatic.light_bulb.desc=Bagliore caldo...
+
+
+item.better_with_aquatic.spawnegg.fish.name=Pesce
+item.better_with_aquatic.spawnegg.angler_fish.name=Rana pescatrice
+
+section.better_with_aquatic.fish.name=Pesce
+section.better_with_aquatic.angler_fish.name=Rana pescatrice
+section.better_with_aquatic.drowned.name=Annegato
+section.better_with_aquatic.frog.name=Rana
+section.better_with_aquatic.fish.desc=Un piccolo pesce che può sopravvivere in acqua dolce e salata.
+section.better_with_aquatic.angler_fish.desc=Un pesce di medie dimensioni, usa il suo bulbo bioluminescente per attirare mob e giocatori.
+section.better_with_aquatic.drowned.desc=Uno zombie derivato da un cadavere lasciato in mare, si è adattato all'acqua e ha imparato a nuotare.
+section.better_with_aquatic.frog.desc=Una piccola rana, possono nuotare e saltare sul terreno. mangiano spesso gli slime.
+
+item.better_with_aquatic.small_bulb.name=Lampadina piccola

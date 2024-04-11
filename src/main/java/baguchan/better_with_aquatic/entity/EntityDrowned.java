@@ -8,6 +8,7 @@ import baguchan.better_with_aquatic.util.MathUtil;
 import net.minecraft.core.entity.Entity;
 import net.minecraft.core.entity.monster.EntityZombie;
 import net.minecraft.core.entity.player.EntityPlayer;
+import net.minecraft.core.util.helper.DamageType;
 import net.minecraft.core.util.helper.MathHelper;
 import net.minecraft.core.util.phys.Vec3d;
 import net.minecraft.core.world.World;
@@ -206,6 +207,11 @@ public class EntityDrowned extends EntityZombie implements IPathGetter, ISwiming
 			this.yRot += this.randomYawVelocity;
 			this.xRot = this.defaultPitch;
 		}
+	}
+
+	@Override
+	public boolean hurt(Entity attacker, int i, DamageType type) {
+		return super.hurt(attacker, i, type);
 	}
 
 	@Override
