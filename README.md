@@ -6,7 +6,7 @@ LukeisStuff - He sent me the coral texture.
 
 ## Current requirements
 
-- BTA 7.1 Pre2a
+- BTA 7.1
 - Babric
 - Halplibe https://github.com/Turnip-Labs/bta-halplibe
 - dragon fly https://github.com/UselessBullets/DragonFly
