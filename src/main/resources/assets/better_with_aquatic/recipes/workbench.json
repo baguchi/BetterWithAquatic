@@ -1,6 +1,6 @@
 [
   {
-    "name": "aquatic:workbench/light_bulb",
+    "name": "better_with_aquatic:workbench/light_bulb",
     "type": "minecraft:crafting/shaped",
     "pattern": [
       "TTT",

@@ -20,7 +20,7 @@ public class ModCraftings implements RecipeEntrypoint {
 	@Override
 	public void onRecipesReady() {
 		AQUATIC.register("workbench", WORKBENCH);
-		Registries.RECIPES.register("aquatic", AQUATIC);
+		Registries.RECIPES.register(MOD_ID, AQUATIC);
 		DataLoader.loadRecipesFromFile("/assets/better_with_aquatic/recipes/workbench.json");
 	}
 
