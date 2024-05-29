@@ -15,7 +15,7 @@ public class RenderAnglerFish extends LivingRenderer<EntityAnglerFish> {
 
 	protected boolean setAnglerBrightness(EntityAnglerFish spider, int i, float f) {
 		if (i == 0) {
-			this.loadTexture("/assets/better_with_aquatic/entity/angler_fish_overlay.png");
+			this.loadTexture("/assets/better_with_aquatic/textures/entity/angler_fish_overlay.png");
 			float brightness = spider.getBrightness(1.0f);
 			if (Minecraft.getMinecraft((Object) this).fullbright) {
 				brightness = 1.0f;

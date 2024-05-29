@@ -11,6 +11,7 @@ import net.minecraft.core.entity.player.EntityPlayer;
 import net.minecraft.core.util.helper.MathHelper;
 import net.minecraft.core.world.World;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -18,6 +19,9 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(value = EntityPlayer.class, remap = false)
 public abstract class EntityPlayerMixin extends EntityLiving implements ISwiming {
+	@Shadow
+	protected abstract void resetHeight();
+
 	@Unique
 	public boolean swimming;
 	@Unique
@@ -39,7 +43,7 @@ public abstract class EntityPlayerMixin extends EntityLiving implements ISwiming
 		} else if (!p_20274_ && this.swimming) {
 			this.setSize(0.6F, 1.8F);
 
-			this.heightOffset = 1.62f;
+			this.resetHeight();
 			this.setPos(this.x, this.y + 1.2F, this.z);
 		}
 		this.swimming = p_20274_;

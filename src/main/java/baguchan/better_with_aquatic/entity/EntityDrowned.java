@@ -24,17 +24,16 @@ public class EntityDrowned extends EntityZombie implements IPathGetter, ISwiming
 		this.setPathFinder(this, new BetterSwimWalkPathFinder(world));
 		this.setPathfindingMalus(this, BlockPath.WATER, 0.0F);
 		this.footSize = 1f;
-		this.skinName = "drowned";
 	}
 
 	@Override
 	public String getEntityTexture() {
-		return "/assets/better_with_aquatic/entity/drowned.png";
+		return "/assets/better_with_aquatic/textures/entity/drowned.png";
 	}
 
 	@Override
 	public String getDefaultEntityTexture() {
-		return "/assets/better_with_aquatic/entity/drowned.png";
+		return "/assets/better_with_aquatic/textures/entity/drowned.png";
 	}
 
 	@Override

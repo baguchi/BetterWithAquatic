@@ -14,7 +14,6 @@ public class EntityAnglerFish extends EntityBaseFish {
 		super(world);
 		this.setSize(0.5F, 0.45F);
 		this.setPos(this.x, this.y, this.z);
-		this.skinName = "angler_fish";
 	}
 
 	@Override
@@ -24,12 +23,12 @@ public class EntityAnglerFish extends EntityBaseFish {
 
 	@Override
 	public String getEntityTexture() {
-		return "/assets/better_with_aquatic/entity/angler_fish.png";
+		return "/assets/better_with_aquatic/textures/entity/angler_fish.png";
 	}
 
 	@Override
 	public String getDefaultEntityTexture() {
-		return "/assets/better_with_aquatic/entity/angler_fish.png";
+		return "/assets/better_with_aquatic/textures/entity/angler_fish.png";
 	}
 
 

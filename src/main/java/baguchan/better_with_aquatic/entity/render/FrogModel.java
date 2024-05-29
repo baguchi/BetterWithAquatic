@@ -3,9 +3,9 @@ package baguchan.better_with_aquatic.entity.render;
 import baguchan.better_with_aquatic.entity.EntityFrog;
 import net.minecraft.core.entity.EntityLiving;
 import net.minecraft.core.util.helper.MathHelper;
-import useless.dragonfly.helper.AnimationHelper;
-import useless.dragonfly.model.entity.BenchEntityModel;
-import useless.dragonfly.model.entity.animation.Animation;
+import org.useless.dragonfly.helper.AnimationHelper;
+import org.useless.dragonfly.model.entity.BenchEntityModel;
+import org.useless.dragonfly.model.entity.animation.Animation;
 
 import static baguchan.better_with_aquatic.BetterWithAquatic.MOD_ID;
 

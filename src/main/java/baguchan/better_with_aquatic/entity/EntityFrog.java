@@ -12,7 +12,7 @@ import net.minecraft.core.util.helper.DamageType;
 import net.minecraft.core.util.helper.MathHelper;
 import net.minecraft.core.util.phys.Vec3d;
 import net.minecraft.core.world.World;
-import useless.dragonfly.model.entity.AnimationState;
+import org.useless.dragonfly.model.entity.AnimationState;
 
 import java.util.Comparator;
 import java.util.List;
@@ -31,7 +31,6 @@ public class EntityFrog extends EntityAnimal implements IPathGetter, ISwiming {
 		this.setPathFinder(this, new BetterSwimWalkPathFinder(world));
 		this.setPathfindingMalus(this, BlockPath.WATER, 0.0F);
 		this.footSize = 1f;
-		this.skinName = "frog";
 		this.frogJumpDelay = 20;
 
 		this.scoreValue = 0;
@@ -63,12 +62,12 @@ public class EntityFrog extends EntityAnimal implements IPathGetter, ISwiming {
 
 	@Override
 	public String getEntityTexture() {
-		return "/assets/better_with_aquatic/entity/frog.png";
+		return "/assets/better_with_aquatic/textures/entity/frog.png";
 	}
 
 	@Override
 	public String getDefaultEntityTexture() {
-		return "/assets/better_with_aquatic/entity/frog.png";
+		return "/assets/better_with_aquatic/textures/entity/frog.png";
 	}
 
 

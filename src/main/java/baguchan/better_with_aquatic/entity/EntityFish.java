@@ -9,18 +9,16 @@ public class EntityFish extends EntityBaseFish {
 		super(world);
 		this.setSize(0.45F, 0.45F);
 		this.setPos(this.x, this.y, this.z);
-
-		this.skinName = "fish";
 	}
 
 	@Override
 	public String getEntityTexture() {
-		return "/assets/better_with_aquatic/entity/fish.png";
+		return "/assets/better_with_aquatic/textures/entity/fish.png";
 	}
 
 	@Override
 	public String getDefaultEntityTexture() {
-		return "/assets/better_with_aquatic/entity/fish.png";
+		return "/assets/better_with_aquatic/textures/entity/fish.png";
 	}
 
 	@Override

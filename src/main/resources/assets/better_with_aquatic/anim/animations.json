@@ -1,0 +1,9 @@
+{
+  "animations": [
+    {
+      "type": "terrain",
+      "id": "better_with_aquatic:sea_grass",
+      "name": "sea_grass"
+    }
+  ]
+}

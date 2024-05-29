@@ -231,12 +231,6 @@ public class BlockWaterPlantFlow extends BlockFluidFlowing {
 	}
 
 	@Override
-	public int getRenderBlockPass() {
-		return 0;
-	}
-
-
-	@Override
 	public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
 		switch (dropCause) {
 			case PICK_BLOCK:
@@ -250,5 +244,10 @@ public class BlockWaterPlantFlow extends BlockFluidFlowing {
 	@Override
 	public boolean canBlockStay(World world, int x, int y, int z) {
 		return (this.canThisPlantGrowOnThisBlockID(world.getBlockId(x, y - 1, z))) && world.getBlock(x, y, z) != null && world.getBlock(x, y, z).blockMaterial == Material.water;
+	}
+
+	@Override
+	public int getRenderBlockPass() {
+		return 0;
 	}
 }

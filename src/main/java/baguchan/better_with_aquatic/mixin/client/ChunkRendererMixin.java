@@ -5,6 +5,7 @@ import net.minecraft.client.render.ChunkRenderer;
 import net.minecraft.client.render.RenderBlocks;
 import net.minecraft.client.render.block.model.BlockModel;
 import net.minecraft.client.render.block.model.BlockModelDispatcher;
+import net.minecraft.client.render.tessellator.Tessellator;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.world.chunk.ChunkCache;
 import org.spongepowered.asm.mixin.Mixin;
@@ -27,7 +28,7 @@ public class ChunkRendererMixin {
 				BlockModel model = BlockModelDispatcher.getInstance().getDispatch(Block.fluidWaterStill);
 
 
-				this.skipRenderPass[1] = model.render(Block.fluidWaterStill, x, y, z);
+				this.skipRenderPass[1] = model.render(Tessellator.instance, x, y, z);
 			}
 		}
 
@@ -35,7 +36,7 @@ public class ChunkRendererMixin {
 			if (renderPass == 1) {
 				BlockModel model = BlockModelDispatcher.getInstance().getDispatch(Block.fluidWaterStill);
 
-				this.skipRenderPass[1] = model.render(Block.fluidWaterFlowing, x, y, z);
+				this.skipRenderPass[1] = model.render(Tessellator.instance, x, y, z);
 			}
 		}
 	}
