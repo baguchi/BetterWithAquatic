@@ -14,7 +14,7 @@
   ],
   "client": [
     "client.ChunkRendererMixin",
-    "client.EntityPlayerMPMixin",
+    "client.EntityClientPlayerMPMixin",
     "client.EntityPlayerSPMixin",
     "client.ModelPlayerMixin",
     "client.PlayerInputMixin",

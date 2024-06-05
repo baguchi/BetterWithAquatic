@@ -15,11 +15,11 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(value = EntityClientPlayerMP.class, remap = false)
-public abstract class EntityPlayerMPMixin extends EntityPlayerSP implements ISwiming {
+public abstract class EntityClientPlayerMPMixin extends EntityPlayerSP implements ISwiming {
 	@Unique
 	public boolean swimmingOld;
 
-	public EntityPlayerMPMixin(Minecraft minecraft, World world, Session session, NetClientHandler netclienthandler) {
+	public EntityClientPlayerMPMixin(Minecraft minecraft, World world, Session session, NetClientHandler netclienthandler) {
 		super(minecraft, world, session, 0);
 	}
 
