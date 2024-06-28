@@ -20,9 +20,9 @@ public class EntityMixin {
 	public AABB bb;
 
 	@Inject(method = "checkAndHandleWater", at = @At("HEAD"), cancellable = true)
-	public void checkAndHandleWater(CallbackInfoReturnable<Boolean> cir) {
-		if (this.world.isMaterialInBB(this.bb, Material.water)) {
-			cir.setReturnValue(true);
-		}
+	public void checkAndHandleWater(boolean addVelocity, CallbackInfoReturnable<Boolean> cir) {
+		Entity entity = (Entity) (Object) this;
+
+		cir.setReturnValue(this.world.handleMaterialAcceleration(this.bb, Material.water, entity, addVelocity));
 	}
 }

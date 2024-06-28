@@ -34,7 +34,7 @@ public class PlayerInputMixin {
 			--this.sprintTimer;
 		}
 		if (entityplayer instanceof ISwiming) {
-			if (entityplayer.isUnderLiquid(Material.water) && !entityplayer.isSneaking()) {
+			if (BetterWithAquatic.isEnableSwim() && entityplayer.isUnderLiquid(Material.water) && !entityplayer.isSneaking()) {
 				if (this.pressedForward) {
 					if (this.sprintTimer == 0) {
 						this.sprintTimer = 7;

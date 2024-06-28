@@ -7,7 +7,7 @@ import net.minecraft.core.world.World;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import org.spongepowered.asm.mixin.injection.Redirect;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(value = EntityItem.class, remap = false)
@@ -17,22 +17,20 @@ public abstract class EntityItemMixin extends Entity {
 		super(world);
 	}
 
+
 	@Inject(method = "checkAndHandleWater", at = @At("HEAD"), cancellable = true)
-	public void checkAndHandleWater(CallbackInfoReturnable<Boolean> cir) {
-		if (this.world.isMaterialInBB(this.bb, Material.water)) {
-			cir.setReturnValue(true);
-		}
+	public void checkAndHandleWater(boolean addVelocity, CallbackInfoReturnable<Boolean> cir) {
+		Entity entity = (Entity) (Object) this;
+
+		cir.setReturnValue(this.world.handleMaterialAcceleration(this.bb, Material.water, entity, addVelocity));
 	}
 
-	@Inject(method = "tick", at = @At(value = "FIELD", target = "Lnet/minecraft/core/entity/EntityItem;yd:D", ordinal = 0))
-	public void tick(CallbackInfo ci) {
+	@Redirect(method = "tick", at = @At(value = "FIELD", target = "Lnet/minecraft/core/entity/EntityItem;yd:D", ordinal = 7))
+	public double tick(EntityItem instance) {
 		if (this.wasInWater) {
 			this.yd += 0.045F;
-			if (this.yd > 0.0) {
-				this.xd *= 0.95f;
-				this.yd *= 0.95f;
-				this.zd *= 0.95f;
-			}
+			this.yd *= 0.95f;
 		}
+		return this.yd;
 	}
 }
