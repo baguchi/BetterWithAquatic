@@ -21,7 +21,7 @@ public class EntityDrowned extends EntityZombie implements IPathGetter, ISwiming
 
 	public EntityDrowned(World world) {
 		super(world);
-		this.setPathFinder(this, new BetterSwimWalkPathFinder(world));
+		this.setPathFinder(this, new BetterSwimWalkPathFinder(world, this));
 		this.setPathfindingMalus(this, BlockPath.WATER, 0.0F);
 		this.footSize = 1f;
 		this.skinName = "drowned";
@@ -40,6 +40,11 @@ public class EntityDrowned extends EntityZombie implements IPathGetter, ISwiming
 	@Override
 	public String getLivingSound() {
 		return "better_with_aquatic.mob.drowned.drowned_idle";
+	}
+
+	@Override
+	public boolean canHideFromSkyLight() {
+		return true;
 	}
 
 	@Override

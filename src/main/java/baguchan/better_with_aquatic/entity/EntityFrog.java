@@ -28,7 +28,7 @@ public class EntityFrog extends EntityAnimal implements IPathGetter, ISwiming {
 
 	public EntityFrog(World world) {
 		super(world);
-		this.setPathFinder(this, new BetterSwimWalkPathFinder(world));
+		this.setPathFinder(this, new BetterSwimWalkPathFinder(world, this));
 		this.setPathfindingMalus(this, BlockPath.WATER, 0.0F);
 		this.footSize = 1f;
 		this.skinName = "frog";
