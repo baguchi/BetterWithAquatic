@@ -1,12 +1,10 @@
 package baguchan.better_with_aquatic.mixin.client;
 
 import baguchan.better_with_aquatic.api.ISwimModel;
-import baguchan.better_with_aquatic.api.ISwiming;
 import baguchan.better_with_aquatic.util.MathUtil;
 import net.minecraft.client.render.model.Cube;
 import net.minecraft.client.render.model.ModelBiped;
 import net.minecraft.client.render.model.ModelPlayer;
-import net.minecraft.core.entity.Entity;
 import net.minecraft.core.util.helper.MathHelper;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -27,12 +25,10 @@ public class ModelPlayerMixin extends ModelBiped implements ISwimModel {
 	@Shadow
 	public Cube bipedBodyOverlay;
 
-	private Entity entity;
+	private float swimAmount;
 
 	@Inject(method = "setRotationAngles", at = @At("TAIL"))
 	public void setRotationAngles(float limbSwing, float limbYaw, float ticksExisted, float headYaw, float headPitch, float scale, CallbackInfo ci) {
-		if (entity instanceof ISwiming) {
-			float swimAmount = ((ISwiming) entity).getSwimAmount(ticksExisted - entity.tickCount);
 			if (swimAmount > 0.0F) {
 				float f5 = limbSwing % 26.0F;
 				float f1 = swimAmount;
@@ -71,7 +67,7 @@ public class ModelPlayerMixin extends ModelBiped implements ISwimModel {
 				this.bipedLeftLeg.rotateAngleX = MathUtil.lerp(swimAmount, this.bipedLeftLeg.rotateAngleX, 0.3F * MathHelper.cos(limbSwing * 0.33333334F + (float) Math.PI));
 				this.bipedRightLeg.rotateAngleX = MathUtil.lerp(swimAmount, this.bipedRightLeg.rotateAngleX, 0.3F * MathHelper.cos(limbSwing * 0.33333334F));
 			}
-		}
+
 
 
 		ModelPlayer.func_178685_a(this.bipedLeftLeg, this.bipedLeftLegOverlay);
@@ -102,12 +98,7 @@ public class ModelPlayerMixin extends ModelBiped implements ISwimModel {
 
 
 	@Override
-	public Entity getEntity() {
-		return entity;
-	}
-
-	@Override
-	public void setEntity(Entity entity) {
-		this.entity = entity;
+	public void setSwimAmount(float swimAmount) {
+		this.swimAmount = swimAmount;
 	}
 }
