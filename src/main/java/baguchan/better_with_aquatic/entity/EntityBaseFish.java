@@ -21,7 +21,7 @@ public abstract class EntityBaseFish extends EntityWaterAnimal implements IPathG
 		this.heightOffset = 0.1F;
 		this.footSize = 0.0F;
 		this.moveSpeed = 0.1F;
-		this.betterSwimPathFinder = new BetterSwimPathFinder(world);
+		this.betterSwimPathFinder = new BetterSwimPathFinder(world, this);
 		this.setPathFinder(this, this.betterSwimPathFinder);
 		this.setPathfindingMalus(this, BlockPath.WATER, 0.0F);
 		this.setPathfindingMalus(this, BlockPath.OPEN, -1.0F);
@@ -98,8 +98,8 @@ public abstract class EntityBaseFish extends EntityWaterAnimal implements IPathG
 				return;
 			}
 			Vec3d coordsForNextPath = this.pathToEntity.getPos(this);
-			double d = this.bbWidth * 2.0f;
-			double d2 = this.bbHeight * 2.0f;
+			double d = this.bbWidth * 1.5f;
+			double d2 = this.bbHeight * 1.5f;
 			while (coordsForNextPath != null && coordsForNextPath.squareDistanceTo(this.x, this.y, this.z) < d * d + d2 * d2) {
 				this.pathToEntity.next();
 				if (this.pathToEntity.isDone()) {

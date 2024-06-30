@@ -21,7 +21,7 @@ public class EntityDrowned extends EntityZombie implements IPathGetter, ISwiming
 
 	public EntityDrowned(World world) {
 		super(world);
-		this.setPathFinder(this, new BetterSwimWalkPathFinder(world));
+		this.setPathFinder(this, new BetterSwimWalkPathFinder(world, this));
 		this.setPathfindingMalus(this, BlockPath.WATER, 0.0F);
 		this.footSize = 1f;
 	}
@@ -206,6 +206,11 @@ public class EntityDrowned extends EntityZombie implements IPathGetter, ISwiming
 			this.yRot += this.randomYawVelocity;
 			this.xRot = this.defaultPitch;
 		}
+	}
+
+	@Override
+	public boolean canHideFromSkyLight() {
+		return true;
 	}
 
 	@Override

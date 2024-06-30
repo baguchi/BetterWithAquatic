@@ -28,6 +28,14 @@ public class PlayerInputMixin {
 	@Final
 	public Minecraft mc;
 
+	@Shadow
+	public float moveForward;
+
+	@Inject(method = "tick", at = @At(value = "HEAD"))
+	public void tickHead(EntityPlayer entityplayer, CallbackInfo ci) {
+		pressedSprint = moveForward >= 0.8F;
+	}
+
 	@Inject(method = "tick", at = @At(value = "TAIL"))
 	public void tick(EntityPlayer entityplayer, CallbackInfo ci) {
 		if (this.sprintTimer > 0) {
@@ -35,7 +43,8 @@ public class PlayerInputMixin {
 		}
 		if (entityplayer instanceof ISwiming) {
 			if (BetterWithAquatic.isEnableSwim() && entityplayer.isUnderLiquid(Material.water) && !entityplayer.isSneaking()) {
-				if (this.pressedForward) {
+				boolean canSprint = !entityplayer.noPhysics;
+				if (entityplayer.onGround && !pressedSprint && moveForward >= 0.8F && !((ISwiming) entityplayer).isSwimming() && canSprint) {
 					if (this.sprintTimer == 0) {
 						this.sprintTimer = 7;
 					} else {
@@ -44,10 +53,9 @@ public class PlayerInputMixin {
 					}
 				}
 
-				if (BetterWithAquatic.isEnableSwim() && mc.gameSettings.keySprint.isPressed()) {
-					if (!this.pressedSprint) {
+				if (mc.gameSettings.keySprint.isPressed()) {
+					if (this.pressedSprint) {
 						((ISwiming) entityplayer).setSwimming(true);
-						this.pressedSprint = true;
 					}
 				} else {
 					if (this.pressedSprint) {
@@ -58,5 +66,4 @@ public class PlayerInputMixin {
 			}
 		}
 	}
-
 }

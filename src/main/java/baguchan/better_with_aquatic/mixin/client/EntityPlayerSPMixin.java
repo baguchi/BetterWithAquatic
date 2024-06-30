@@ -8,7 +8,6 @@ import net.minecraft.core.util.helper.MathHelper;
 import net.minecraft.core.world.World;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
-import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
@@ -19,8 +18,6 @@ public abstract class EntityPlayerSPMixin extends EntityPlayer implements ISwimi
 
 	@Shadow
 	protected Minecraft mc;
-	@Unique
-	private boolean pressedSprint = false;
 
 	public EntityPlayerSPMixin(World world) {
 		super(world);

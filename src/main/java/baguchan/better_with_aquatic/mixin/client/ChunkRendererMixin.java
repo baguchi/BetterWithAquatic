@@ -15,14 +15,14 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 
-import java.util.HashSet;
+import java.util.Set;
 
 @Mixin(value = ChunkRenderer.class, remap = false)
 public class ChunkRendererMixin {
 	@Shadow
 	public boolean[] skipRenderPass;
 	@Inject(method = "updateRenderer", locals = LocalCapture.CAPTURE_FAILHARD, at = @At(value = "INVOKE", target = "Lnet/minecraft/core/block/Block;getRenderBlockPass()I", shift = At.Shift.AFTER))
-	private void updateRenderer(CallbackInfo ci, int minX, int minY, int minZ, int maxX, int maxY, int maxZ, HashSet lastSpecialTileEntities, int cacheRadius, ChunkCache chunkcache, RenderBlocks renderblocks, int renderPass, boolean needsMoreRenderPasses, boolean hasRenderedBlock, boolean hasStartedDrawing, int y, int z, int x, int blockId, Block block) {
+	private void updateRenderer(CallbackInfo ci, int minX, int minY, int minZ, int maxX, int maxY, int maxZ, Set lastSpecialTileEntities, int cacheRadius, ChunkCache chunkcache, RenderBlocks renderblocks, int renderPass, boolean needsMoreRenderPasses, boolean hasRenderedBlock, boolean hasStartedDrawing, int y, int z, int x, int blockId, Block block) {
 		if (blockId == ModBlocks.sea_grass.id) {
 			if (renderPass == 1) {
 				BlockModel model = BlockModelDispatcher.getInstance().getDispatch(Block.fluidWaterStill);

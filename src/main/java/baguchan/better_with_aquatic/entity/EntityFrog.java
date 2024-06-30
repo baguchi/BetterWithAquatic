@@ -28,7 +28,7 @@ public class EntityFrog extends EntityAnimal implements IPathGetter, ISwiming {
 
 	public EntityFrog(World world) {
 		super(world);
-		this.setPathFinder(this, new BetterSwimWalkPathFinder(world));
+		this.setPathFinder(this, new BetterSwimWalkPathFinder(world, this));
 		this.setPathfindingMalus(this, BlockPath.WATER, 0.0F);
 		this.footSize = 1f;
 		this.frogJumpDelay = 20;
@@ -139,8 +139,8 @@ public class EntityFrog extends EntityAnimal implements IPathGetter, ISwiming {
 				return;
 			}
 			Vec3d coordsForNextPath = this.pathToEntity.getPos(this);
-			double d = this.bbWidth * 2.0f;
-			double d2 = this.bbHeight * 2.0f;
+			double d = this.bbWidth * 1.5f;
+			double d2 = this.bbHeight * 1.5f;
 			while (coordsForNextPath != null && coordsForNextPath.squareDistanceTo(this.x, this.y, this.z) < d * d + d2 * d2) {
 				this.pathToEntity.next();
 				if (this.pathToEntity.isDone()) {

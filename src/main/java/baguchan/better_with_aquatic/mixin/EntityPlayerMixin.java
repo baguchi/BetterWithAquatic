@@ -82,7 +82,7 @@ public abstract class EntityPlayerMixin extends EntityLiving implements ISwiming
 	}
 
 
-	@Inject(method = "onLivingUpdate", at = @At("HEAD"))
+	@Inject(method = "onLivingUpdate", at = @At("TAIL"))
 	public void onLivingUpdate(CallbackInfo ci) {
 		Block block = this.world.getBlock((int) this.x, MathHelper.floor_double(this.y + 1), (int) this.z);
 

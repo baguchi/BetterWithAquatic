@@ -102,7 +102,7 @@ dependencies {
 	modImplementation "com.github.Turnip-Labs:bta-halplibe:${project.halplibe_version}"
 	modImplementation "DragonFly:dragonfly:${project.dragonfly_version}"
 
-	modImplementation "BetterAI-BTA:better_ai:3.0.0"
+	modImplementation "BetterAI-BTA:better_ai:4.0.0-7.2"
 	modImplementation "ModMenu:ModMenu:2.0.5"
 
 	implementation "org.slf4j:slf4j-api:1.8.0-beta4"

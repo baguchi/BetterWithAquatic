@@ -46,7 +46,7 @@
 		"fabricloader": ">=0.15.6-babric.6-bta",
 		"halplibe": ">=4.0.6-beta.1",
 		"dragonfly": ">=1.5.0-7.2-pre1",
-		"better_ai": ">=3.0.0",
+		"better_ai": ">=4.0.0-7.2",
 		"terrain-api": ">=1.4.4-7.2-pre1"
   },
   "suggests": {
