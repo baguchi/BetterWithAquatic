@@ -19,10 +19,11 @@ public abstract class PlayerRendererMixin extends LivingRenderer<EntityPlayer> {
 		super(modelbase, shadowSize);
 	}
 
-	@Inject(method = "renderPlayer", at = @At("HEAD"))
+	@Inject(method = "render(Lnet/minecraft/core/entity/player/EntityPlayer;DDDFF)V", at = @At("HEAD"))
 	public void renderPlayer(EntityPlayer entity, double d, double d1, double d2, float yaw, float renderPartialTicks, CallbackInfo ci) {
-		if (this.mainModel instanceof ISwimModel) {
-			((ISwimModel) this.mainModel).setEntity(entity);
+		if (entity instanceof ISwiming) {
+			float swimAmount = ((ISwiming) entity).getSwimAmount(renderPartialTicks);
+			((ISwimModel) this.mainModel).setSwimAmount(swimAmount);
 		}
 	}
 
