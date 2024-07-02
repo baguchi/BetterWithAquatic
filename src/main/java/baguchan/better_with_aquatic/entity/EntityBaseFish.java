@@ -131,8 +131,8 @@ public abstract class EntityBaseFish extends EntityWaterAnimal implements IPathG
 				}
 				this.yRot += f3;
 				if (this.hasAttacked && this.entityToAttack != null) {
-					double d4 = this.entityToAttack.x - this.x;
-					double d5 = this.entityToAttack.z - this.z;
+					double d4 = x1 - this.x;
+					double d5 = z1 - this.z;
 					float f5 = this.yRot;
 					this.yRot = (float) (Math.atan2(d5, d4) * 180.0 / 3.1415927410125732) - 90.0f;
 					float f4 = (f5 - this.yRot + 90.0f) * 3.141593f / 180.0f;
