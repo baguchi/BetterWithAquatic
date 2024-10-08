@@ -3,13 +3,13 @@ package baguchan.better_with_aquatic.entity.render;
 import baguchan.better_with_aquatic.entity.EntityAnglerFish;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.render.entity.LivingRenderer;
-import net.minecraft.client.render.model.ModelBase;
 import org.lwjgl.opengl.GL11;
+import org.useless.dragonfly.model.entity.BenchEntityModel;
 
 public class RenderAnglerFish extends LivingRenderer<EntityAnglerFish> {
-	public RenderAnglerFish(ModelBase modelbase, float shadowSize) {
-		super(modelbase, shadowSize);
-		this.setRenderPassModel(new AnglerFishModel());
+	public RenderAnglerFish(BenchEntityModel orCreateEntityModel, float shadowSize) {
+		super(orCreateEntityModel, shadowSize);
+		this.setRenderPassModel(orCreateEntityModel);
 	}
 
 

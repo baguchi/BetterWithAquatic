@@ -56,7 +56,7 @@ public class BetterWithAquatic implements GameStartEntrypoint, ModInitializer {
 		ModBlocks.createBlocks();
 		ModItems.onInitialize();
 		EntityHelper.createEntity(EntityFish.class, entityID, "Fish", () -> new RenderFish(new FishModel(), 0.3F));
-		EntityHelper.createEntity(EntityAnglerFish.class, entityID + 1, "AnglerFish", () -> new RenderAnglerFish(new FishModel(), 0.4F));
+		EntityHelper.createEntity(EntityAnglerFish.class, entityID + 1, "AnglerFish", () -> new RenderAnglerFish(BetterWithAquaticClient.modelAnglerFish, 0.4F));
 		EntityHelper.createEntity(EntityDrowned.class, entityID + 2, "Drowned", () -> new DrownedRenderer(BetterWithAquaticClient.modelDrowned, 0.5F));
 		EntityHelper.createEntity(EntityFrog.class, entityID + 3, "Frog", () -> new FrogRenderer(BetterWithAquaticClient.modelFrog, 0.3f));
 

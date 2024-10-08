@@ -32,8 +32,8 @@ public class FrogModel extends BenchEntityModel {
 			animate(frog.attackState, testAnimation.getAnimations().get("animation.frog.tongue"), ticksExisted, 1F);
 			animate(frog.jumpState, testAnimation.getAnimations().get("animation.frog.jump"), ticksExisted, 1F);
 			if (frog.isSwimming()) {
-				animateWalk(testAnimation.getAnimations().get("animation.frog.swim"), limbSwing, limbYaw * 0.5F, 2.0F, 2.5F);
-				animateWalk(testAnimation.getAnimations().get("animation.frog.idle.water"), ticksExisted, MathHelper.clamp(0.5F - limbYaw * 0.5F, 0, 0.5F), 2.0F, 2.5F);
+				animateWalk(testAnimation.getAnimations().get("animation.frog.swim"), limbSwing, limbYaw, 2.0F, 2.5F);
+				animateWalk(testAnimation.getAnimations().get("animation.frog.idle.water"), ticksExisted, MathHelper.clamp(1F - limbYaw, 0, 1F), 2.0F, 2.5F);
 			}
 		}
 	}

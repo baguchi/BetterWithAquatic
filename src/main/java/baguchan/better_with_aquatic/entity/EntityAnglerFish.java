@@ -8,8 +8,10 @@ import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.util.helper.DamageType;
 import net.minecraft.core.util.helper.MathHelper;
 import net.minecraft.core.world.World;
+import org.useless.dragonfly.model.entity.AnimationState;
 
 public class EntityAnglerFish extends EntityBaseFish {
+	public AnimationState attackState = new AnimationState();
 	public EntityAnglerFish(World world) {
 		super(world);
 		this.setSize(0.5F, 0.45F);
@@ -81,6 +83,7 @@ public class EntityAnglerFish extends EntityBaseFish {
 	protected void attackEntity(Entity entity, float distance) {
 		if (this.attackTime <= 0 && distance < 1.5f && entity.bb.maxY > this.bb.minY && entity.bb.minY < this.bb.maxY) {
 			this.attackTime = 20;
+			this.attackState.start(this.tickCount);
 			entity.hurt(this, 1, DamageType.COMBAT);
 		}
 	}

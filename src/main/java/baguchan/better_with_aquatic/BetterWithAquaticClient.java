@@ -1,6 +1,7 @@
 package baguchan.better_with_aquatic;
 
 import baguchan.better_with_aquatic.block.ModBlocks;
+import baguchan.better_with_aquatic.entity.render.AnglerFishModel;
 import baguchan.better_with_aquatic.entity.render.DrownedModel;
 import baguchan.better_with_aquatic.entity.render.FrogModel;
 import net.minecraft.client.render.block.color.BlockColorCustom;
@@ -15,6 +16,8 @@ import static baguchan.better_with_aquatic.BetterWithAquatic.MOD_ID;
 
 
 public class BetterWithAquaticClient implements ClientStartEntrypoint {
+
+	public static final BenchEntityModel modelAnglerFish = ModelHelper.getOrCreateEntityModel(MOD_ID, "entity/angler_fish.geo.json", AnglerFishModel.class);
 
 	public static final BenchEntityModel modelDrowned = ModelHelper.getOrCreateEntityModel(MOD_ID, "entity/drowned.geo.json", DrownedModel.class);
 
